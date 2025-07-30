@@ -63,11 +63,11 @@ export default {
 			boxShadow: {
 				'elegant': 'var(--shadow-elegant)',
 				'soft': 'var(--shadow-soft)',
-				'gold': 'var(--shadow-gold)',
+				'red': 'var(--shadow-red)',
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
-				'gradient-gold': 'var(--gradient-gold)',
+				'gradient-red': 'var(--gradient-red)',
 				'gradient-subtle': 'var(--gradient-subtle)',
 			},
 			borderRadius: {
@@ -98,7 +98,7 @@ export default {
 				},
 				'professional-glow': {
 					'0%, 100%': { boxShadow: 'var(--shadow-soft)' },
-					'50%': { boxShadow: 'var(--shadow-gold)' }
+					'50%': { boxShadow: 'var(--shadow-red)' }
 				}
 			},
 			animation: {

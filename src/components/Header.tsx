@@ -6,9 +6,10 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
-    { name: 'Home', href: '#home' },
+    { name: 'Home', href: '/' },
     { name: 'Services', href: '#services' },
-    { name: 'About Us', href: '#about' },
+    { name: 'About', href: '#about' },
+    { name: 'BEE Legislation', href: '/bee-legislation' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -37,13 +38,13 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-foreground hover:text-secondary font-medium transition-professional relative group"
+                className="text-foreground hover:text-accent font-medium transition-professional relative group"
               >
                 {item.name}
-                <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-gold transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+                <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-red transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
               </a>
             ))}
-            <Button variant="outline" className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground transition-professional">
+            <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-professional">
               Get Quote
             </Button>
           </nav>
@@ -65,13 +66,13 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-foreground hover:text-secondary font-medium py-2 transition-professional"
+                  className="text-foreground hover:text-accent font-medium py-2 transition-professional"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
-              <Button variant="outline" className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground mt-4">
+              <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground mt-4">
                 Get Quote
               </Button>
             </nav>

@@ -48,7 +48,7 @@ const About = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6">
-            About <span className="text-gradient-gold">EVASA</span>
+            About <span className="text-gradient-red">Us</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             EVASA is a Broad-Based Black Economic Empowerment verification agency with highly experienced 
@@ -67,11 +67,11 @@ const About = () => {
                 EVASA provides a full-service offering in the verification process, assisting clients from 
                 initial engagement, through the verification process itself, to final B-BBEE certification.
               </p>
-              <p>
-                While we prefer to focus on the verification space, we are able to provide consulting and 
-                advisory engagements as well, though these would naturally preclude us from providing BEE 
-                verification services to that client for a period of four years post consulting assistance.
-              </p>
+                <p>
+                  Although EVASA prefers to focus on the verification space, we are able to provide consulting and 
+                  advisory engagements as well, although these would naturally then preclude us from providing BEE 
+                  verification services to that client for a period of two years post consulting assistance.
+                </p>
               <p>
                 Our commitment is to deliver professional, accurate, and timely B-BBEE verification services 
                 that help organizations achieve their transformation objectives while maintaining the highest 
@@ -136,14 +136,14 @@ const About = () => {
               >
                 <CardHeader>
                   <div className="flex items-start space-x-4">
-                    <div className="bg-gradient-gold p-4 rounded-full">
-                      <Users className="h-8 w-8 text-secondary-foreground" />
+                    <div className="bg-gradient-red p-4 rounded-full">
+                      <Users className="h-8 w-8 text-accent-foreground" />
                     </div>
                     <div>
                       <CardTitle className="text-2xl font-playfair text-primary">
                         {founder.name}
                       </CardTitle>
-                      <p className="text-secondary font-medium">{founder.role}</p>
+                      <p className="text-accent font-medium">{founder.role}</p>
                       <p className="text-sm text-muted-foreground mt-1">{founder.experience}</p>
                     </div>
                   </div>

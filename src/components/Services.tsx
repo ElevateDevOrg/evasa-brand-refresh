@@ -41,7 +41,7 @@ const Services = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6">
-            Our <span className="text-gradient-gold">Services</span>
+            Our <span className="text-gradient-red">Services</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             EVASA provides a full-service offering in the verification process, assisting clients from 
@@ -84,7 +84,7 @@ const Services = () => {
                 <ul className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-3 flex-shrink-0"></div>
+                      <div className="w-1.5 h-1.5 bg-accent rounded-full mr-3 flex-shrink-0"></div>
                       {feature}
                     </li>
                   ))}
@@ -92,7 +92,7 @@ const Services = () => {
                 
                 <Button 
                   variant="ghost" 
-                  className="w-full mt-4 group/btn hover:bg-secondary/10 hover:text-secondary transition-professional"
+                  className="w-full mt-4 group/btn hover:bg-accent/10 hover:text-accent transition-professional"
                 >
                   Learn More
                   <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -110,7 +110,7 @@ const Services = () => {
             <p className="text-muted-foreground mb-6 max-w-md">
               Contact our experienced team for a comprehensive consultation and quote.
             </p>
-            <Button size="lg" className="btn-gold">
+            <Button size="lg" className="btn-red">
               Request Consultation
             </Button>
           </div>

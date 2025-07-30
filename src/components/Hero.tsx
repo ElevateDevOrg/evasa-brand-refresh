@@ -28,16 +28,15 @@ const Hero = () => {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-playfair font-bold text-primary-foreground mb-6 leading-tight">
-              B-BBEE <span className="text-gradient-gold">Verification</span>
+              B-BBEE <span className="text-accent">Verification</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 leading-relaxed">
-              Full service offering with 40+ years of combined experience in 
-              B-BBEE verification, advisory, and auditing excellence.
+              Full service offering
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button size="lg" className="btn-gold group">
+              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground group">
                 Get Started Today
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -46,7 +45,7 @@ const Hero = () => {
                 size="lg" 
                 className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 backdrop-blur-sm"
               >
-                Learn More
+                Read About Us
               </Button>
             </div>
 

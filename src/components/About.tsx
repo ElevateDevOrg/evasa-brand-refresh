@@ -1,0 +1,169 @@
+import { Award, Users, Target, Shield } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import teamImage from '@/assets/team-meeting.jpg';
+
+const About = () => {
+  const founders = [
+    {
+      name: "Duncan De Groot",
+      role: "Co-Founder & Director",
+      experience: "10+ years B-BBEE experience",
+      background: "Ex-Group Executive at Empowerdex with responsibility for Cape Town, Durban and Pretoria branches. Presented at conferences and appeared on television as a BEE expert.",
+      qualifications: "BComm, MBA (University of Cape Town)"
+    },
+    {
+      name: "John De Groot", 
+      role: "Co-Founder & Director",
+      experience: "18+ years post-qualification",
+      background: "Chartered Accountant through Deloitte & Touche. Ex-Director of Empowerdex Audit Inc with extensive experience in Audit, Tax, B-BBEE and Accounting.",
+      qualifications: "B.Bus.Sci, CA(SA)"
+    }
+  ];
+
+  const values = [
+    {
+      icon: Shield,
+      title: "Trust & Integrity",
+      description: "Building lasting relationships through honest, transparent practices and ethical standards."
+    },
+    {
+      icon: Award,
+      title: "Excellence",
+      description: "Delivering exceptional quality in every verification and consulting engagement."
+    },
+    {
+      icon: Users,
+      title: "Partnership",
+      description: "Working collaboratively with clients to achieve their transformation goals."
+    },
+    {
+      icon: Target,
+      title: "Results-Driven",
+      description: "Focused on measurable outcomes that drive meaningful empowerment."
+    }
+  ];
+
+  return (
+    <section id="about" className="section-professional">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16 animate-fade-in-up">
+          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6">
+            About <span className="text-gradient-gold">EVASA</span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            EVASA is a Broad-Based Black Economic Empowerment verification agency with highly experienced 
+            principals who bring a cumulative 40 years of expertise in B-BBEE verification, advisory, and auditing.
+          </p>
+        </div>
+
+        {/* Company Story */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+          <div className="animate-fade-in-up">
+            <h3 className="text-3xl font-playfair font-semibold text-primary mb-6">
+              Our Story & Mission
+            </h3>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                EVASA provides a full-service offering in the verification process, assisting clients from 
+                initial engagement, through the verification process itself, to final B-BBEE certification.
+              </p>
+              <p>
+                While we prefer to focus on the verification space, we are able to provide consulting and 
+                advisory engagements as well, though these would naturally preclude us from providing BEE 
+                verification services to that client for a period of four years post consulting assistance.
+              </p>
+              <p>
+                Our commitment is to deliver professional, accurate, and timely B-BBEE verification services 
+                that help organizations achieve their transformation objectives while maintaining the highest 
+                standards of integrity and compliance.
+              </p>
+            </div>
+          </div>
+          
+          <div className="animate-scale-in">
+            <div className="relative rounded-2xl overflow-hidden shadow-elegant">
+              <img 
+                src={teamImage} 
+                alt="EVASA team meeting"
+                className="w-full h-96 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Values */}
+        <div className="mb-20">
+          <h3 className="text-3xl font-playfair font-semibold text-primary text-center mb-12">
+            Our Values
+          </h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {values.map((value, index) => (
+              <Card 
+                key={value.title} 
+                className="card-professional text-center card-hover animate-fade-in-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <CardHeader>
+                  <div className="bg-gradient-primary p-4 rounded-full w-16 h-16 mx-auto mb-4">
+                    <value.icon className="h-8 w-8 text-primary-foreground" />
+                  </div>
+                  <CardTitle className="text-xl font-playfair text-primary">
+                    {value.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {value.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Leadership Team */}
+        <div className="animate-fade-in-up">
+          <h3 className="text-3xl font-playfair font-semibold text-primary text-center mb-12">
+            Our Leadership Team
+          </h3>
+          <div className="grid md:grid-cols-2 gap-8">
+            {founders.map((founder, index) => (
+              <Card 
+                key={founder.name} 
+                className="card-professional card-hover animate-slide-in-right"
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                <CardHeader>
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-gradient-gold p-4 rounded-full">
+                      <Users className="h-8 w-8 text-secondary-foreground" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-2xl font-playfair text-primary">
+                        {founder.name}
+                      </CardTitle>
+                      <p className="text-secondary font-medium">{founder.role}</p>
+                      <p className="text-sm text-muted-foreground mt-1">{founder.experience}</p>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-muted-foreground leading-relaxed">
+                    {founder.background}
+                  </p>
+                  <div className="bg-muted/50 p-3 rounded-lg">
+                    <p className="text-sm font-medium text-primary">Qualifications:</p>
+                    <p className="text-sm text-muted-foreground">{founder.qualifications}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;

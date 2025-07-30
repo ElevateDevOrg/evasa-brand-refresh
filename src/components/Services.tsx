@@ -1,0 +1,123 @@
+import { FileCheck, Users, BarChart3, Building2, ArrowRight } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import verificationImage from '@/assets/verification-documents.jpg';
+import officeImage from '@/assets/office-building.jpg';
+
+const Services = () => {
+  const services = [
+    {
+      icon: FileCheck,
+      title: "BEE Verification",
+      description: "Full array of BEE Verification Services, including for Private Equity, Joint Ventures and other BEE structures",
+      features: ["Complete B-BBEE scorecards", "Private equity structures", "Joint venture assessments", "Annual compliance"],
+      image: verificationImage
+    },
+    {
+      icon: Users,
+      title: "BEE Consulting",
+      description: "Expert BEE Consulting Services to optimize your transformation strategy",
+      features: ["Strategic planning", "Implementation guidance", "Policy development", "Training programs"],
+      image: officeImage
+    },
+    {
+      icon: BarChart3,
+      title: "Rating & Analysis",
+      description: "Non-verified rating and GAP Analysis to identify your current position and improvement areas",
+      features: ["Current position assessment", "Gap identification", "Improvement roadmap", "Benchmarking analysis"],
+      image: verificationImage
+    },
+    {
+      icon: Building2,
+      title: "Ownership Assessment",
+      description: "Comprehensive Ownership Assessment and Verification services",
+      features: ["Ownership structure analysis", "Verification certificates", "Legal compliance", "Due diligence support"],
+      image: officeImage
+    }
+  ];
+
+  return (
+    <section id="services" className="section-professional bg-gradient-subtle">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16 animate-fade-in-up">
+          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6">
+            Our <span className="text-gradient-gold">Services</span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            EVASA provides a full-service offering in the verification process, assisting clients from 
+            initial engagement through final B-BBEE certification.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          {services.map((service, index) => (
+            <Card 
+              key={service.title} 
+              className="card-professional card-hover group animate-scale-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <CardHeader className="relative">
+                <div className="flex items-start space-x-4">
+                  <div className="bg-gradient-primary p-3 rounded-lg">
+                    <service.icon className="h-6 w-6 text-primary-foreground" />
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-xl font-playfair text-primary mb-2">
+                      {service.title}
+                    </CardTitle>
+                    <CardDescription className="text-muted-foreground leading-relaxed">
+                      {service.description}
+                    </CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+              
+              <CardContent className="space-y-4">
+                <div className="aspect-video rounded-lg overflow-hidden mb-4">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                
+                <ul className="space-y-2">
+                  {service.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
+                      <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-3 flex-shrink-0"></div>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                
+                <Button 
+                  variant="ghost" 
+                  className="w-full mt-4 group/btn hover:bg-secondary/10 hover:text-secondary transition-professional"
+                >
+                  Learn More
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <div className="text-center animate-fade-in-up">
+          <div className="bg-card border border-border rounded-xl p-8 inline-block shadow-elegant">
+            <h3 className="text-2xl font-playfair font-semibold text-primary mb-4">
+              Ready to Get Started?
+            </h3>
+            <p className="text-muted-foreground mb-6 max-w-md">
+              Contact our experienced team for a comprehensive consultation and quote.
+            </p>
+            <Button size="lg" className="btn-gold">
+              Request Consultation
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Services;

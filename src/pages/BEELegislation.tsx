@@ -1,4 +1,4 @@
-import { Download, FileText } from 'lucide-react';
+import { Download, FileText, BookOpen } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
@@ -52,9 +52,14 @@ const BEELegislation = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-primary py-20">
+      <section className="bg-gradient-primary py-20 pt-32">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
+            <div className="flex items-center justify-center mb-6">
+              <div className="bg-primary-foreground/20 backdrop-blur-sm p-4 rounded-full border border-primary-foreground/30 mr-4">
+                <BookOpen className="h-12 w-12 text-primary-foreground" />
+              </div>
+            </div>
             <h1 className="text-4xl md:text-5xl font-playfair font-bold text-primary-foreground mb-6">
               BEE Legislation
             </h1>

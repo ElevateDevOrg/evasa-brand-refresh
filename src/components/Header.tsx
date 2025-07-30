@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Menu, X, FileCheck, Award, Users, Building } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import evasaLogo from '@/assets/evasa_logo_hp.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,18 +19,12 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="bg-gradient-primary p-2 rounded-lg">
-              <Award className="h-8 w-8 text-primary-foreground" />
-            </div>
-            <div>
-              <h1 className="text-2xl font-playfair font-bold text-primary">
-                EVASA
-              </h1>
-              <p className="text-xs text-muted-foreground font-medium">
-                Empowerment Verification Agency
-              </p>
-            </div>
+          <div className="flex items-center">
+            <img 
+              src={evasaLogo} 
+              alt="EVASA - Empowerment Verification Agency of South Africa"
+              className="h-12 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation */}
@@ -39,12 +34,48 @@ const Header = () => {
                 key={item.name}
                 href={item.href}
                 className="text-foreground hover:text-accent font-medium transition-professional relative group"
+                onClick={(e) => {
+                  // Handle hash links with proper scrolling
+                  if (item.href.startsWith('#')) {
+                    e.preventDefault();
+                    const targetSection = document.getElementById(item.href.substring(1));
+                    if (targetSection) {
+                      // Section exists on current page, scroll to it
+                      const headerHeight = 80; // 20 * 4 = 80px (h-20)
+                      const elementPosition = targetSection.offsetTop - headerHeight;
+                      window.scrollTo({
+                        top: elementPosition,
+                        behavior: 'smooth'
+                      });
+                                          } else {
+                        // Section doesn't exist on current page, navigate to home page first
+                        // Store the target section to scroll to after page load
+                        sessionStorage.setItem('scrollToSection', item.href);
+                        window.location.href = '/';
+                      }
+                  }
+                  // For non-hash links (like /bee-legislation), let them navigate normally
+                }}
               >
                 {item.name}
                 <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-red transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
               </a>
             ))}
-            <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-professional">
+            <Button 
+              variant="outline" 
+              className="border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-professional"
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  const headerHeight = 80; // 20 * 4 = 80px (h-20)
+                  const elementPosition = contactSection.offsetTop - headerHeight;
+                  window.scrollTo({
+                    top: elementPosition,
+                    behavior: 'smooth'
+                  });
+                }
+              }}
+            >
               Get Quote
             </Button>
           </nav>
@@ -67,12 +98,48 @@ const Header = () => {
                   key={item.name}
                   href={item.href}
                   className="text-foreground hover:text-accent font-medium py-2 transition-professional"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => {
+                    // Handle hash links with proper scrolling
+                    if (item.href.startsWith('#')) {
+                      e.preventDefault();
+                      const targetSection = document.getElementById(item.href.substring(1));
+                      if (targetSection) {
+                        // Section exists on current page, scroll to it
+                        const headerHeight = 80; // 20 * 4 = 80px (h-20)
+                        const elementPosition = targetSection.offsetTop - headerHeight;
+                        window.scrollTo({
+                          top: elementPosition,
+                          behavior: 'smooth'
+                        });
+                      } else {
+                        // Section doesn't exist on current page, navigate to home page first
+                        // Store the target section to scroll to after page load
+                        sessionStorage.setItem('scrollToSection', item.href);
+                        window.location.href = '/';
+                      }
+                    }
+                    setIsMenuOpen(false);
+                  }}
                 >
                   {item.name}
                 </a>
               ))}
-              <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground mt-4">
+              <Button 
+                variant="outline" 
+                className="border-accent text-accent hover:bg-accent hover:text-accent-foreground mt-4"
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    const headerHeight = 80; // 20 * 4 = 80px (h-20)
+                    const elementPosition = contactSection.offsetTop - headerHeight;
+                    window.scrollTo({
+                      top: elementPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                  setIsMenuOpen(false); // Close mobile menu after clicking
+                }}
+              >
                 Get Quote
               </Button>
             </nav>

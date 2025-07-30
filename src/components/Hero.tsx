@@ -32,18 +32,43 @@ const Hero = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 leading-relaxed">
-              Full service offering
+              Full service offering with 40+ years of combined experience in B-BBEE verification, advisory, and auditing excellence.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground group">
+              <Button 
+                size="lg" 
+                className="bg-accent hover:bg-accent/90 text-accent-foreground group"
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    const headerHeight = 80; // 20 * 4 = 80px (h-20)
+                    const elementPosition = contactSection.offsetTop - headerHeight;
+                    window.scrollTo({
+                      top: elementPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                }}
+              >
                 Get Started Today
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 backdrop-blur-sm"
+                className="border-white/50 text-white hover:bg-white/20 hover:text-white backdrop-blur-sm bg-white/10"
+                onClick={() => {
+                  const aboutSection = document.getElementById('about');
+                  if (aboutSection) {
+                    const headerHeight = 80; // 20 * 4 = 80px (h-20)
+                    const elementPosition = aboutSection.offsetTop - headerHeight;
+                    window.scrollTo({
+                      top: elementPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                }}
               >
                 Read About Us
               </Button>

@@ -40,7 +40,7 @@ const Contact = () => {
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6">
             Contact <span className="text-gradient-gold">Us</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
             Ready to begin your B-BBEE verification journey? Our experienced team is here to guide you 
             through every step of the process.
           </p>
@@ -53,7 +53,7 @@ const Contact = () => {
               <h3 className="text-2xl font-playfair font-semibold text-primary mb-6">
                 Get In Touch
               </h3>
-              <p className="text-muted-foreground leading-relaxed mb-8">
+              <p className="text-foreground/70 leading-relaxed mb-8">
                 Whether you need a full B-BBEE verification, consulting services, or just want to understand 
                 where your organization currently stands, we're here to help.
               </p>
@@ -73,8 +73,8 @@ const Contact = () => {
                       </div>
                       <div>
                         <h4 className="font-semibold text-primary mb-1">{info.title}</h4>
-                        <p className="text-lg font-medium text-secondary mb-1">{info.details}</p>
-                        <p className="text-sm text-muted-foreground">{info.description}</p>
+                        <p className="text-lg font-medium text-foreground mb-1">{info.details}</p>
+                        <p className="text-sm text-foreground/70">{info.description}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -82,23 +82,7 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Call to Action */}
-            <Card className="card-professional bg-gradient-primary text-primary-foreground animate-professional-glow">
-              <CardContent className="p-6 text-center">
-                <h4 className="text-xl font-playfair font-semibold mb-2">
-                  Need Immediate Assistance?
-                </h4>
-                <p className="mb-4 opacity-90">
-                  Our verification experts are standing by to help with urgent requirements.
-                </p>
-                <Button 
-                  variant="outline" 
-                  className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
-                >
-                  Call Now
-                </Button>
-              </CardContent>
-            </Card>
+
           </div>
 
           {/* Contact Form */}
@@ -108,7 +92,7 @@ const Contact = () => {
                 <CardTitle className="text-2xl font-playfair text-primary">
                   Request a Quote
                 </CardTitle>
-                <p className="text-muted-foreground">
+                <p className="text-foreground/70">
                   Fill out the form below and we'll get back to you within 24 hours.
                 </p>
               </CardHeader>
@@ -180,7 +164,7 @@ const Contact = () => {
                   <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
 
-                <p className="text-xs text-muted-foreground text-center">
+                <p className="text-xs text-foreground/60 text-center">
                   By submitting this form, you agree to our privacy policy and terms of service.
                 </p>
               </CardContent>

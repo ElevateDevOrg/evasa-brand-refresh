@@ -1,38 +1,41 @@
 import { FileCheck, Users, BarChart3, Building2, ArrowRight } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import verificationImage from '@/assets/verification-documents.jpg';
 import officeImage from '@/assets/office-building.jpg';
+import consultingImage from '@/assets/consulting.jpg';
+import verificationImage from '@/assets/verification.png';
+import ratingImage from '@/assets/analysis.jpg';
+import assessmentImage from '@/assets/assessment.jpg';
 
 const Services = () => {
   const services = [
     {
       icon: FileCheck,
       title: "BEE Verification",
-      description: "Full array of BEE Verification Services, including for Private Equity, Joint Ventures and other BEE structures",
+      description: "Comprehensive B-BBEE verification services with 40+ years of combined experience in the verification space",
       features: ["Complete B-BBEE scorecards", "Private equity structures", "Joint venture assessments", "Annual compliance"],
       image: verificationImage
     },
     {
       icon: Users,
       title: "BEE Consulting",
-      description: "Expert BEE Consulting Services to optimize your transformation strategy",
+      description: "Strategic B-BBEE advisory services (note: precludes verification services for 4 years post-consulting)",
       features: ["Strategic planning", "Implementation guidance", "Policy development", "Training programs"],
-      image: officeImage
+      image: consultingImage
     },
     {
       icon: BarChart3,
       title: "Rating & Analysis",
       description: "Non-verified rating and GAP Analysis to identify your current position and improvement areas",
       features: ["Current position assessment", "Gap identification", "Improvement roadmap", "Benchmarking analysis"],
-      image: verificationImage
+      image: ratingImage
     },
     {
       icon: Building2,
       title: "Ownership Assessment",
-      description: "Comprehensive Ownership Assessment and Verification services",
+      description: "Comprehensive Ownership Assessment and Verification services with ownership structure analysis and B-BBEE compliance",
       features: ["Ownership structure analysis", "Verification certificates", "Legal compliance", "Due diligence support"],
-      image: officeImage
+      image: assessmentImage
     }
   ];
 
@@ -43,9 +46,8 @@ const Services = () => {
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6">
             Our <span className="text-gradient-red">Services</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            EVASA provides a full-service offering in the verification process, assisting clients from 
-            initial engagement through final B-BBEE certification.
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            EVASA is a Broad-Based Black Economic Empowerment ("B-BBEE") Verification agency. Our principals are highly experienced BEE and auditing practitioners, with a cumulative 40 years in the B-BBEE verification, B-BBEE advisory and auditing space. We provide a full-service offering in the verification process, assisting clients from initial engagement, through the verification process itself, to final B-BBEE certification.
           </p>
         </div>
 
@@ -110,7 +112,21 @@ const Services = () => {
             <p className="text-muted-foreground mb-6 max-w-md">
               Contact our experienced team for a comprehensive consultation and quote.
             </p>
-            <Button size="lg" className="btn-red">
+            <Button 
+              size="lg" 
+              className="btn-red"
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  const headerHeight = 80; // 20 * 4 = 80px (h-20)
+                  const elementPosition = contactSection.offsetTop - headerHeight;
+                  window.scrollTo({
+                    top: elementPosition,
+                    behavior: 'smooth'
+                  });
+                }
+              }}
+            >
               Request Consultation
             </Button>
           </div>

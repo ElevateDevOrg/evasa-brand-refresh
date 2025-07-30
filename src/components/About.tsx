@@ -1,6 +1,8 @@
 import { Award, Users, Target, Shield } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import teamImage from '@/assets/team-meeting.jpg';
+import teamImage from '@/assets/team-meeting.png';
+import duncanImage from '@/assets/duncandg.jpg';
+import johnImage from '@/assets/john_degroot.jpg';
 
 const About = () => {
   const founders = [
@@ -9,14 +11,16 @@ const About = () => {
       role: "Co-Founder & Director",
       experience: "10+ years B-BBEE experience",
       background: "Ex-Group Executive at Empowerdex with responsibility for Cape Town, Durban and Pretoria branches. Presented at conferences and appeared on television as a BEE expert.",
-      qualifications: "BComm, MBA (University of Cape Town)"
+      qualifications: "BComm, MBA (University of Cape Town)",
+      image: duncanImage
     },
     {
       name: "John De Groot", 
       role: "Co-Founder & Director",
       experience: "18+ years post-qualification",
       background: "Chartered Accountant through Deloitte & Touche. Ex-Director of Empowerdex Audit Inc with extensive experience in Audit, Tax, B-BBEE and Accounting.",
-      qualifications: "B.Bus.Sci, CA(SA)"
+      qualifications: "B.Bus.Sci, CA(SA)",
+      image: johnImage
     }
   ];
 
@@ -94,9 +98,14 @@ const About = () => {
 
         {/* Values */}
         <div className="mb-20">
-          <h3 className="text-3xl font-playfair font-semibold text-primary text-center mb-12">
-            Our Values
-          </h3>
+          <div className="text-center mb-16 animate-fade-in-up">
+            <h3 className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6">
+              Our <span className="text-gradient-red">Values</span>
+            </h3>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              The core principles that guide our approach to B-BBEE verification and client relationships.
+            </p>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
               <Card 
@@ -135,9 +144,13 @@ const About = () => {
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <CardHeader>
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-gradient-red p-4 rounded-full">
-                      <Users className="h-8 w-8 text-accent-foreground" />
+                  <div className="flex items-start space-x-6">
+                    <div className="w-32 h-32 rounded-full overflow-hidden flex-shrink-0">
+                      <img 
+                        src={founder.image} 
+                        alt={founder.name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div>
                       <CardTitle className="text-2xl font-playfair text-primary">

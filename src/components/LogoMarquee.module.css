@@ -1,0 +1,71 @@
+.wrapper {
+  --logo-h: 48px;
+  --gap: 2.5rem;
+  --speed: 30s;
+  position: relative;
+  overflow: hidden;
+  padding-block: 12px;
+  border-radius: 12px;
+}
+
+.maskLeft, .maskRight {
+  position: absolute;
+  top: 0; bottom: 0; width: 48px; pointer-events: none;
+  background: linear-gradient(to right, var(--wrap-bg, #fff), transparent);
+  z-index: 2;
+}
+.maskLeft { left: 0; }
+.maskRight {
+  right: 0;
+  background: linear-gradient(to left, var(--wrap-bg, #fff), transparent);
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  width: max-content;
+  animation: scroll var(--speed) linear infinite;
+  will-change: transform;
+}
+
+.wrapper:hover .track { animation-play-state: var(--pause-on-hover, paused); }
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--logo-h);
+  min-width: calc(var(--logo-h) * 2.5);
+  opacity: 0.9;
+  filter: saturate(0.9);
+}
+
+.item img {
+  height: var(--logo-h);
+  width: auto;
+  object-fit: contain;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track { animation: none; flex-wrap: wrap; }
+}
+
+/* Allow forcing motion even when user prefers reduced motion */
+.force .track {
+  animation: scroll var(--speed) linear infinite !important;
+  animation-duration: var(--speed) !important;
+  animation-iteration-count: infinite !important;
+  animation-play-state: running !important;
+  flex-wrap: nowrap !important;
+}
+
+/* module-scoped helper class for TSX */
+.force { isolation: isolate; }
+
+

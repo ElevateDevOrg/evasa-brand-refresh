@@ -1,7 +1,7 @@
 import clients from "@/content/clients.json";
 import styles from "./LogoMarquee.module.css";
 // Resolve logos from src assets at build-time; supports multiple formats
-const logoModules = import.meta.glob("@/assets/logos/*", { eager: true, as: "url" });
+const logoModules = import.meta.glob("@/assets/logos/*", { eager: true, query: "?url", import: "default" });
 
 type Client = {
   name: string;

@@ -1,10 +1,16 @@
 import { Award, Users, Target, Shield } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import teamImage from '@/assets/team-meeting.png';
 import duncanImage from '@/assets/duncandg.jpg';
 import johnImage from '@/assets/john_degroot.jpg';
 
 const About = () => {
+  const { isVisible: headerVisible, elementRef: headerRef } = useScrollAnimation(0.2);
+  const { isVisible: storyVisible, elementRef: storyRef } = useScrollAnimation(0.1, 300);
+  const { isVisible: valuesVisible, elementRef: valuesRef } = useScrollAnimation(0.1, 400);
+  const { isVisible: leadershipVisible, elementRef: leadershipRef } = useScrollAnimation(0.1, 500);
+
   const founders = [
     {
       name: "Duncan De Groot",
@@ -50,7 +56,14 @@ const About = () => {
   return (
     <section id="about" className="section-professional">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div 
+          ref={headerRef}
+          className={`text-center mb-16 transition-all duration-700 ${
+            headerVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6">
             About <span className="text-gradient-red">Us</span>
           </h2>
@@ -61,8 +74,15 @@ const About = () => {
         </div>
 
         {/* Company Story */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
-          <div className="animate-fade-in-up">
+        <div 
+          ref={storyRef}
+          className={`grid lg:grid-cols-2 gap-12 items-center mb-20 transition-all duration-700 ${
+            storyVisible 
+              ? 'opacity-100 translate-x-0' 
+              : 'opacity-0 -translate-x-8'
+          }`}
+        >
+          <div>
             <h3 className="text-3xl font-playfair font-semibold text-primary mb-6">
               Our Story & Mission
             </h3>
@@ -84,7 +104,11 @@ const About = () => {
             </div>
           </div>
           
-          <div className="animate-scale-in">
+          <div className={`transition-all duration-700 delay-200 ${
+            storyVisible 
+              ? 'opacity-100 translate-x-0 scale-100' 
+              : 'opacity-0 translate-x-8 scale-100'
+          }`}>
             <div className="relative rounded-2xl overflow-hidden shadow-elegant">
               <img 
                 src={teamImage} 
@@ -98,7 +122,14 @@ const About = () => {
 
         {/* Values */}
         <div className="mb-20">
-          <div className="text-center mb-16 animate-fade-in-up">
+          <div 
+            ref={valuesRef}
+            className={`text-center mb-16 transition-all duration-700 ${
+              valuesVisible 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-8'
+            }`}
+          >
             <h3 className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6">
               Our <span className="text-gradient-red">Values</span>
             </h3>
@@ -110,11 +141,18 @@ const About = () => {
             {values.map((value, index) => (
               <Card 
                 key={value.title} 
-                className="card-professional text-center card-hover animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className={`card-professional text-center card-hover hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg transition-professional group ${
+                  valuesVisible 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-6'
+                }`}
+                style={{ 
+                  transitionDelay: valuesVisible ? `${index * 130}ms` : '0ms',
+                  transitionDuration: '700ms'
+                }}
               >
                 <CardHeader>
-                  <div className="bg-gradient-primary p-4 rounded-full w-16 h-16 mx-auto mb-4">
+                  <div className="bg-gradient-primary p-4 rounded-full w-16 h-16 mx-auto mb-4 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primary/80 transition-all duration-300">
                     <value.icon className="h-8 w-8 text-primary-foreground" />
                   </div>
                   <CardTitle className="text-xl font-playfair text-primary">
@@ -132,7 +170,12 @@ const About = () => {
         </div>
 
         {/* Leadership Team */}
-        <div className="animate-fade-in-up">
+        <div
+          ref={leadershipRef}
+          className={`transition-all duration-700 will-change-smooth ${
+            leadershipVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
+        >
           <h3 className="text-3xl font-playfair font-semibold text-primary text-center mb-12">
             Our Leadership Team
           </h3>
@@ -140,16 +183,16 @@ const About = () => {
             {founders.map((founder, index) => (
               <Card 
                 key={founder.name} 
-                className="card-professional card-hover animate-slide-in-right"
-                style={{ animationDelay: `${index * 0.2}s` }}
+                className="card-professional card-hover animate-slide-in-right hover:shadow-xl hover:-translate-y-1 transition-all duration-400 group"
+                style={{ animationDelay: `${index * 0.15}s` }}
               >
                 <CardHeader>
                   <div className="flex items-start space-x-6">
-                    <div className="w-32 h-32 rounded-full overflow-hidden flex-shrink-0">
+                    <div className="w-32 h-32 rounded-full overflow-hidden flex-shrink-0 transition-all duration-300">
                       <img 
                         src={founder.image} 
                         alt={founder.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                     <div>

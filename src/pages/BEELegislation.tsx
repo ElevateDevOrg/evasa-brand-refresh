@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ScrollToTop from '@/components/ScrollToTop';
 
 const BEELegislation = () => {
   const legislationCategories = [
@@ -56,7 +57,7 @@ const BEELegislation = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex items-center justify-center mb-6">
-              <div className="bg-primary-foreground/20 backdrop-blur-sm p-4 rounded-full border border-primary-foreground/30 mr-4">
+              <div className="bg-primary-foreground/20 backdrop-blur-sm p-4 rounded-full border border-primary-foreground/30 mr-4 hover:bg-primary-foreground/30 transition-all duration-300">
                 <BookOpen className="h-12 w-12 text-primary-foreground" />
               </div>
             </div>
@@ -75,10 +76,10 @@ const BEELegislation = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
             {legislationCategories.map((category, index) => (
-              <Card key={index} className="shadow-soft hover:shadow-elegant transition-shadow duration-300">
+              <Card key={index} className="shadow-soft hover:shadow-elegant hover:scale-105 hover:-translate-y-2 transition-all duration-500 group">
                 <CardHeader>
                   <CardTitle className="text-xl font-inter text-foreground flex items-center">
-                    <FileText className="h-6 w-6 text-accent mr-3" />
+                    <FileText className="h-6 w-6 text-accent mr-3 group-hover:text-primary transition-colors duration-300" />
                     {category.title}
                   </CardTitle>
                   <CardDescription className="text-muted-foreground">
@@ -93,10 +94,10 @@ const BEELegislation = () => {
                         <Button 
                           variant="outline" 
                           size="sm"
-                          className="text-accent border-accent hover:bg-accent hover:text-accent-foreground"
+                          className="text-accent border-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 group/btn"
                           onClick={() => window.open(doc.link, '_blank')}
                         >
-                          <Download className="h-4 w-4 mr-2" />
+                          <Download className="h-4 w-4 mr-2 group-hover/btn:translate-y-0.5 transition-transform duration-300" />
                           Download
                         </Button>
                       </div>
@@ -110,6 +111,7 @@ const BEELegislation = () => {
       </section>
 
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const Contact = () => {
   const contactInfo = [
@@ -33,10 +34,19 @@ const Contact = () => {
     }
   ];
 
+  const { isVisible: headerVisible, elementRef: headerRef } = useScrollAnimation(0.15);
+  const { isVisible: infoVisible, elementRef: infoRef } = useScrollAnimation(0.15, 100);
+  const { isVisible: formVisible, elementRef: formRef } = useScrollAnimation(0.15, 150);
+
   return (
     <section id="contact" className="section-professional bg-gradient-subtle">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div
+          ref={headerRef}
+          className={`text-center mb-16 transition-all duration-700 will-change-smooth ${
+            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6">
             Contact <span className="text-gradient-gold">Us</span>
           </h2>
@@ -48,7 +58,12 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <div className="space-y-8 animate-fade-in-up">
+          <div
+            ref={infoRef}
+            className={`space-y-8 transition-all duration-700 will-change-smooth ${
+              infoVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+            }`}
+          >
             <div>
               <h3 className="text-2xl font-playfair font-semibold text-primary mb-6">
                 Get In Touch
@@ -63,12 +78,12 @@ const Contact = () => {
               {contactInfo.map((info, index) => (
                 <Card 
                   key={info.title} 
-                  className="card-professional card-hover animate-scale-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className="card-professional card-hover hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg transition-professional group"
+                  style={{ transitionDelay: `${index * 80}ms` }}
                 >
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
-                      <div className="bg-gradient-primary p-3 rounded-lg">
+                      <div className="bg-gradient-primary p-3 rounded-lg group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primary/80 transition-professional">
                         <info.icon className="h-5 w-5 text-primary-foreground" />
                       </div>
                       <div>
@@ -86,7 +101,12 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="animate-slide-in-right">
+          <div
+            ref={formRef}
+            className={`transition-all duration-700 will-change-smooth ${
+              formVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
+            }`}
+          >
             <Card className="card-professional">
               <CardHeader>
                 <CardTitle className="text-2xl font-playfair text-primary">

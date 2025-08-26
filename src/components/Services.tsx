@@ -1,6 +1,7 @@
 import { FileCheck, Users, BarChart3, Building2, ArrowRight } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import officeImage from '@/assets/office-building.jpg';
 import consultingImage from '@/assets/consulting.jpg';
 import verificationImage from '@/assets/verification.png';
@@ -8,6 +9,10 @@ import ratingImage from '@/assets/analysis.jpg';
 import assessmentImage from '@/assets/assessment.jpg';
 
 const Services = () => {
+  const { isVisible: headerVisible, elementRef: headerRef } = useScrollAnimation(0.2);
+  const { isVisible: cardsVisible, elementRef: cardsRef } = useScrollAnimation(0.1, 200);
+  const { isVisible: ctaVisible, elementRef: ctaRef } = useScrollAnimation(0.2, 400);
+
   const services = [
     {
       icon: FileCheck,
@@ -42,7 +47,14 @@ const Services = () => {
   return (
     <section id="services" className="section-professional bg-gradient-subtle">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div 
+          ref={headerRef}
+          className={`text-center mb-16 transition-all duration-700 will-change-smooth ${
+            headerVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6">
             Our <span className="text-gradient-red">Services</span>
           </h2>
@@ -51,16 +63,26 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div 
+          ref={cardsRef}
+          className="grid md:grid-cols-2 gap-8 mb-12"
+        >
           {services.map((service, index) => (
             <Card 
               key={service.title} 
-              className="card-professional card-hover group animate-scale-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`card-professional card-hover group hover:shadow-xl hover:-translate-y-1 transition-professional will-change-smooth ${
+                cardsVisible 
+                  ? `opacity-100 translate-y-0` 
+                  : 'opacity-0 translate-y-8'
+              }`}
+              style={{ 
+                transitionDelay: cardsVisible ? `${index * 90}ms` : '0ms',
+                transitionDuration: '700ms'
+              }}
             >
               <CardHeader className="relative">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-gradient-primary p-3 rounded-lg">
+                  <div className="bg-gradient-primary p-3 rounded-lg group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primary/80 transition-all duration-300">
                     <service.icon className="h-6 w-6 text-primary-foreground" />
                   </div>
                   <div className="flex-1">
@@ -79,7 +101,7 @@ const Services = () => {
                   <img 
                     src={service.image} 
                     alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
                   />
                 </div>
                 
@@ -94,17 +116,24 @@ const Services = () => {
                 
                 <Button 
                   variant="ghost" 
-                  className="w-full mt-4 group/btn hover:bg-accent/10 hover:text-accent transition-professional"
+                  className="w-full mt-4 group/btn hover:bg-accent/10 hover:text-accent transition-all duration-300"
                 >
                   Learn More
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
                 </Button>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        <div className="text-center animate-fade-in-up">
+        <div 
+          ref={ctaRef}
+          className={`text-center transition-all duration-700 ${
+            ctaVisible 
+              ? 'opacity-100 translate-y-0 scale-100' 
+              : 'opacity-0 translate-y-4 scale-100'
+          }`}
+        >
           <div className="bg-card border border-border rounded-xl p-8 inline-block shadow-elegant">
             <h3 className="text-2xl font-playfair font-semibold text-primary mb-4">
               Ready to Get Started?

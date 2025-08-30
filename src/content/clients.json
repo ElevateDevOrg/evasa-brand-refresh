@@ -7,7 +7,13 @@
   { "name": "Evolution", "file": "evolution.svg" },
   { "name": "Excellent Meat", "file": "excellent-meat.png" },
   { "name": "Henley Business School", "file": "henley-business-school.png" },
-  { "name": "Interbet", "file": "interbet.png" }
+  { "name": "Interbet", "file": "interbet" },
+  { "name": "Laurium Captial", "file": "laurium-capital.svg" },
+  { "name": "Novomatic Africa", "file": "novomatic-africa.svg" },
+  { "name": "PFN", "file": "pfn.svg" },
+  { "name": "Phangela Security", "file": "phangela-security.svg" },
+  { "name": "Tandym Print", "file": "tandym-print.svg" },
+  { "name": "Van Schaik", "file": "van-schaik.svg" }
 ]
 
 

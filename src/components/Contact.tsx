@@ -43,20 +43,19 @@ const Contact = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div
           ref={headerRef}
-          className={`text-center mb-16 transition-all duration-700 will-change-smooth ${
+          className={`text-center mb-10 transition-all duration-700 will-change-smooth ${
             headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6">
+          <h2 className="text-3xl md:text-4xl font-playfair font-bold text-primary mb-4">
             Contact <span className="text-gradient-gold">Us</span>
           </h2>
-          <p className="text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
-            Ready to begin your B-BBEE verification journey? Our experienced team is here to guide you 
-            through every step of the process.
+          <p className="text-base md:text-lg text-foreground/80 max-w-2xl mx-auto leading-normal">
+            Ready to begin your B-BBEE verification journey? Our team can guide you through the process.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8">
           {/* Contact Information */}
           <div
             ref={infoRef}
@@ -65,31 +64,30 @@ const Contact = () => {
             }`}
           >
             <div>
-              <h3 className="text-2xl font-playfair font-semibold text-primary mb-6">
+              <h3 className="text-xl font-playfair font-semibold text-primary mb-4">
                 Get In Touch
               </h3>
-              <p className="text-foreground/70 leading-relaxed mb-8">
-                Whether you need a full B-BBEE verification, consulting services, or just want to understand 
-                where your organization currently stands, we're here to help.
+              <p className="text-sm text-foreground/70 leading-normal mb-6">
+                Whether you need a full B-BBEE verification, consulting services, or a quick question, we’re here to help.
               </p>
             </div>
 
             <div className="grid gap-6">
               {contactInfo.map((info, index) => (
                 <Card 
-                  key={info.title} 
-                  className="card-professional card-hover hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg transition-professional group"
+                  key={info.title}
+                  className="card-professional transition-professional"
                   style={{ transitionDelay: `${index * 80}ms` }}
                 >
-                  <CardContent className="p-6">
+                  <CardContent className="p-4">
                     <div className="flex items-start space-x-4">
-                      <div className="bg-gradient-primary p-3 rounded-lg group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primary/80 transition-professional">
-                        <info.icon className="h-5 w-5 text-primary-foreground" />
+                      <div className="bg-gradient-primary p-2 rounded-lg transition-professional">
+                        <info.icon className="h-4 w-4 text-primary-foreground" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-primary mb-1">{info.title}</h4>
-                        <p className="text-lg font-medium text-foreground mb-1">{info.details}</p>
-                        <p className="text-sm text-foreground/70">{info.description}</p>
+                        <h4 className="text-sm font-semibold text-primary mb-0.5">{info.title}</h4>
+                        <p className="text-sm font-medium text-foreground mb-0.5">{info.details}</p>
+                        <p className="text-xs text-foreground/70">{info.description}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -109,21 +107,21 @@ const Contact = () => {
           >
             <Card className="card-professional">
               <CardHeader>
-                <CardTitle className="text-2xl font-playfair text-primary">
+                <CardTitle className="text-xl font-playfair text-primary">
                   Request a Quote
                 </CardTitle>
-                <p className="text-foreground/70">
-                  Fill out the form below and we'll get back to you within 24 hours.
+                <p className="text-sm text-foreground/70">
+                  Fill out the form below and we’ll get back to you within 24 hours.
                 </p>
               </CardHeader>
-              <CardContent className="space-y-6">
+              <CardContent className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">First Name</Label>
                     <Input 
                       id="firstName" 
                       placeholder="Enter your first name"
-                      className="transition-professional focus:ring-secondary"
+                      className="h-9 transition-professional focus:ring-secondary"
                     />
                   </div>
                   <div className="space-y-2">
@@ -131,7 +129,7 @@ const Contact = () => {
                     <Input 
                       id="lastName" 
                       placeholder="Enter your last name"
-                      className="transition-professional focus:ring-secondary"
+                      className="h-9 transition-professional focus:ring-secondary"
                     />
                   </div>
                 </div>
@@ -142,7 +140,7 @@ const Contact = () => {
                     id="email" 
                     type="email" 
                     placeholder="your.email@company.com"
-                    className="transition-professional focus:ring-secondary"
+                    className="h-9 transition-professional focus:ring-secondary"
                   />
                 </div>
 
@@ -151,7 +149,7 @@ const Contact = () => {
                   <Input 
                     id="company" 
                     placeholder="Your company name"
-                    className="transition-professional focus:ring-secondary"
+                    className="h-9 transition-professional focus:ring-secondary"
                   />
                 </div>
 
@@ -159,7 +157,7 @@ const Contact = () => {
                   <Label htmlFor="service">Service Required</Label>
                   <select 
                     id="service"
-                    className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground transition-professional focus:ring-2 focus:ring-secondary focus:border-secondary"
+                    className="w-full h-9 px-3 py-2 border border-input rounded-md bg-background text-foreground transition-professional focus:ring-2 focus:ring-secondary focus:border-secondary"
                   >
                     <option value="">Select a service</option>
                     <option value="verification">B-BBEE Verification</option>
@@ -174,7 +172,7 @@ const Contact = () => {
                   <Textarea 
                     id="message" 
                     placeholder="Tell us about your requirements..."
-                    rows={4}
+                    rows={3}
                     className="transition-professional focus:ring-secondary"
                   />
                 </div>

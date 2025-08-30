@@ -23,6 +23,7 @@ const Header = () => {
     { name: 'Home', href: '/' },
     { name: 'Services', href: '#services' },
     { name: 'About', href: '#about' },
+    { name: 'Team', href: '/team' },
     { name: 'BEE Legislation', href: '/bee-legislation' },
     { name: 'Contact', href: '#contact' },
   ];

@@ -11,24 +11,8 @@ const About = () => {
   const { isVisible: valuesVisible, elementRef: valuesRef } = useScrollAnimation(0.1, 400);
   const { isVisible: leadershipVisible, elementRef: leadershipRef } = useScrollAnimation(0.1, 500);
 
-  const founders = [
-    {
-      name: "Duncan De Groot",
-      role: "Co-Founder & Director",
-      experience: "10+ years B-BBEE experience",
-      background: "Ex-Group Executive at Empowerdex with responsibility for Cape Town, Durban and Pretoria branches. Presented at conferences and appeared on television as a BEE expert.",
-      qualifications: "BComm, MBA (University of Cape Town)",
-      image: duncanImage
-    },
-    {
-      name: "John De Groot", 
-      role: "Co-Founder & Director",
-      experience: "18+ years post-qualification",
-      background: "Chartered Accountant through Deloitte & Touche. Ex-Director of Empowerdex Audit Inc with extensive experience in Audit, Tax, B-BBEE and Accounting.",
-      qualifications: "B.Bus.Sci, CA(SA)",
-      image: johnImage
-    }
-  ];
+  // Leadership section has moved to the Team page
+  const founders: never[] = [];
 
   const values = [
     {
@@ -169,54 +153,7 @@ const About = () => {
           </div>
         </div>
 
-        {/* Leadership Team */}
-        <div
-          ref={leadershipRef}
-          className={`transition-all duration-700 will-change-smooth ${
-            leadershipVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <h3 className="text-3xl font-playfair font-semibold text-primary text-center mb-12">
-            Our Leadership Team
-          </h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            {founders.map((founder, index) => (
-              <Card 
-                key={founder.name} 
-                className="card-professional card-hover animate-slide-in-right hover:shadow-xl hover:-translate-y-1 transition-all duration-400 group"
-                style={{ animationDelay: `${index * 0.15}s` }}
-              >
-                <CardHeader>
-                  <div className="flex items-start space-x-6">
-                    <div className="w-32 h-32 rounded-full overflow-hidden flex-shrink-0 transition-all duration-300">
-                      <img 
-                        src={founder.image} 
-                        alt={founder.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    <div>
-                      <CardTitle className="text-2xl font-playfair text-primary">
-                        {founder.name}
-                      </CardTitle>
-                      <p className="text-accent font-medium">{founder.role}</p>
-                      <p className="text-sm text-muted-foreground mt-1">{founder.experience}</p>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground leading-relaxed">
-                    {founder.background}
-                  </p>
-                  <div className="bg-muted/50 p-3 rounded-lg">
-                    <p className="text-sm font-medium text-primary">Qualifications:</p>
-                    <p className="text-sm text-muted-foreground">{founder.qualifications}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+        {/* Leadership Team moved to /team */}
       </div>
     </section>
   );

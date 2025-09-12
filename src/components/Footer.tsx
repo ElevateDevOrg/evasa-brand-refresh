@@ -28,7 +28,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3 text-sm">
                 <Phone className="h-4 w-4 text-secondary" />
-                <span>+27 (0)21 XXX XXXX</span>
+                <span>+27 (0)82 410 6081</span>
               </div>
               <div className="flex items-center space-x-3 text-sm">
                 <MapPin className="h-4 w-4 text-secondary" />
@@ -92,7 +92,7 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-primary-foreground/60 text-sm">
-              © 2024 EVASA (Pty) Ltd. All rights reserved.
+              © 2025 EVASA (Pty) Ltd. All rights reserved.
             </p>
             <div className="flex items-center space-x-6 text-sm">
               <span className="text-primary-foreground/60">

@@ -115,11 +115,15 @@ const Contact = () => {
                 </p>
               </CardHeader>
               <CardContent className="space-y-4">
+                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="_gotcha" className="space-y-4">
+                  <input type="hidden" name="form-name" value="contact" />
+                  <input type="text" name="_gotcha" className="hidden" aria-hidden="true" />
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">First Name</Label>
                     <Input 
                       id="firstName" 
+                      name="firstName"
                       placeholder="Enter your first name"
                       className="h-9 transition-professional focus:ring-secondary"
                     />
@@ -128,6 +132,7 @@ const Contact = () => {
                     <Label htmlFor="lastName">Last Name</Label>
                     <Input 
                       id="lastName" 
+                      name="lastName"
                       placeholder="Enter your last name"
                       className="h-9 transition-professional focus:ring-secondary"
                     />
@@ -138,6 +143,7 @@ const Contact = () => {
                   <Label htmlFor="email">Email Address</Label>
                   <Input 
                     id="email" 
+                    name="email"
                     type="email" 
                     placeholder="your.email@company.com"
                     className="h-9 transition-professional focus:ring-secondary"
@@ -148,6 +154,7 @@ const Contact = () => {
                   <Label htmlFor="company">Company Name</Label>
                   <Input 
                     id="company" 
+                    name="company"
                     placeholder="Your company name"
                     className="h-9 transition-professional focus:ring-secondary"
                   />
@@ -157,6 +164,7 @@ const Contact = () => {
                   <Label htmlFor="service">Service Required</Label>
                   <select 
                     id="service"
+                    name="service"
                     className="w-full h-9 px-3 py-2 border border-input rounded-md bg-background text-foreground transition-professional focus:ring-2 focus:ring-secondary focus:border-secondary"
                   >
                     <option value="">Select a service</option>
@@ -171,17 +179,18 @@ const Contact = () => {
                   <Label htmlFor="message">Message</Label>
                   <Textarea 
                     id="message" 
+                    name="message"
                     placeholder="Tell us about your requirements..."
                     rows={3}
                     className="transition-professional focus:ring-secondary"
                   />
                 </div>
 
-                <Button className="w-full btn-gold group">
+                <Button type="submit" className="w-full btn-gold group">
                   Send Message
                   <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
-
+                </form>
                 <p className="text-xs text-foreground/60 text-center">
                   By submitting this form, you agree to our privacy policy and terms of service.
                 </p>

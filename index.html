@@ -19,6 +19,16 @@
 
   <body>
     <div id="root"></div>
+    <!-- Netlify Forms detection: hidden form -->
+    <form name="contact" netlify netlify-honeypot="_gotcha" hidden>
+      <input type="text" name="firstName" />
+      <input type="text" name="lastName" />
+      <input type="email" name="email" />
+      <input type="text" name="company" />
+      <select name="service"></select>
+      <textarea name="message"></textarea>
+      <input type="text" name="_gotcha" />
+    </form>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

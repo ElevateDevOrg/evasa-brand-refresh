@@ -1,7 +1,7 @@
 import { ArrowRight, Shield, TrendingUp, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
-import heroImage from '@/assets/hero-handshake.jpg';
+import heroImage from '@/assets/hero-handshake.webp';
 
 const Hero = () => {
   const [scrollY, setScrollY] = useState(0);

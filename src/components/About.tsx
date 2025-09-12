@@ -1,9 +1,7 @@
 import { Award, Users, Target, Shield } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import teamImage from '@/assets/team-meeting.png';
-import duncanImage from '@/assets/duncandg.jpg';
-import johnImage from '@/assets/john_degroot.jpg';
+import teamImage from '@/assets/team-meeting.webp';
 
 const About = () => {
   const { isVisible: headerVisible, elementRef: headerRef } = useScrollAnimation(0.2);

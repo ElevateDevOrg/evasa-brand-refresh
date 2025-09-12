@@ -115,7 +115,7 @@ const Contact = () => {
                 </p>
               </CardHeader>
               <CardContent className="space-y-4">
-                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="_gotcha" className="space-y-4">
+                <form name="contact" method="POST" action="/success.html" data-netlify="true" netlify-honeypot="_gotcha" className="space-y-4">
                   <input type="hidden" name="form-name" value="contact" />
                   <input type="text" name="_gotcha" className="hidden" aria-hidden="true" />
                 <div className="grid md:grid-cols-2 gap-4">

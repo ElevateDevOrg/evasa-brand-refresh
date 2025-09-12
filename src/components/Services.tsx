@@ -1,12 +1,8 @@
-import { FileCheck, Users, BarChart3, Building2, ArrowRight } from 'lucide-react';
+import { FileCheck, Users, BarChart3, Building2 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import officeImage from '@/assets/office-building.jpg';
-import consultingImage from '@/assets/consulting.jpg';
-import verificationImage from '@/assets/verification.png';
-import ratingImage from '@/assets/analysis.jpg';
-import assessmentImage from '@/assets/assessment.jpg';
+// Removed photo assets per request
 
 const Services = () => {
   const { isVisible: headerVisible, elementRef: headerRef } = useScrollAnimation(0.2);
@@ -18,29 +14,25 @@ const Services = () => {
       icon: FileCheck,
       title: "BEE Verification",
       description: "Comprehensive B-BBEE verification services with 40+ years of combined experience in the verification space",
-      features: ["Complete B-BBEE scorecards", "Private equity structures", "Joint venture assessments", "Annual compliance"],
-      image: verificationImage
+      features: ["Complete B-BBEE scorecards", "Private equity structures", "Joint venture assessments", "Annual compliance"]
     },
     {
       icon: Users,
       title: "BEE Consulting",
       description: "Strategic B-BBEE advisory services (note: precludes verification services for 4 years post-consulting)",
-      features: ["Strategic planning", "Implementation guidance", "Policy development", "Training programs"],
-      image: consultingImage
+      features: ["Strategic planning", "Implementation guidance", "Policy development", "Training programs"]
     },
     {
       icon: BarChart3,
       title: "Rating & Analysis",
       description: "Non-verified rating and GAP Analysis to identify your current position and improvement areas",
-      features: ["Current position assessment", "Gap identification", "Improvement roadmap", "Benchmarking analysis"],
-      image: ratingImage
+      features: ["Current position assessment", "Gap identification", "Improvement roadmap", "Benchmarking analysis"]
     },
     {
       icon: Building2,
       title: "Ownership Assessment",
       description: "Comprehensive Ownership Assessment and Verification services with ownership structure analysis and B-BBEE compliance",
-      features: ["Ownership structure analysis", "Verification certificates", "Legal compliance", "Due diligence support"],
-      image: assessmentImage
+      features: ["Ownership structure analysis", "Verification certificates", "Legal compliance", "Due diligence support"]
     }
   ];
 
@@ -70,7 +62,7 @@ const Services = () => {
           {services.map((service, index) => (
             <Card 
               key={service.title} 
-              className={`card-professional card-hover group hover:shadow-xl hover:-translate-y-1 transition-professional will-change-smooth ${
+              className={`card-professional card-hover group hover:shadow-xl hover:-translate-y-1 transition-professional will-change-smooth h-full ${
                 cardsVisible 
                   ? `opacity-100 translate-y-0` 
                   : 'opacity-0 translate-y-8'
@@ -81,9 +73,9 @@ const Services = () => {
               }}
             >
               <CardHeader className="relative">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-gradient-primary p-3 rounded-lg group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primary/80 transition-all duration-300">
-                    <service.icon className="h-6 w-6 text-primary-foreground" />
+                <div className="flex items-start space-x-5">
+                  <div className="bg-gradient-primary p-4 rounded-full ring-1 ring-primary/20 shadow-sm group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-primary/80 transition-all duration-300">
+                    <service.icon className="h-7 w-7 md:h-8 md:w-8 text-primary-foreground" />
                   </div>
                   <div className="flex-1">
                     <CardTitle className="text-xl font-playfair text-primary mb-2">
@@ -97,30 +89,15 @@ const Services = () => {
               </CardHeader>
               
               <CardContent className="space-y-4">
-                <div className="aspect-video rounded-lg overflow-hidden mb-4">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                  />
-                </div>
-                
-                <ul className="space-y-2">
+                <div className="h-px bg-border/60" />
+                <ul className="space-y-2 mt-2">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 bg-accent rounded-full mr-3 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-accent rounded-full mr-3 flex-shrink-0"></div>
                       {feature}
                     </li>
                   ))}
                 </ul>
-                
-                <Button 
-                  variant="ghost" 
-                  className="w-full mt-4 group/btn hover:bg-accent/10 hover:text-accent transition-all duration-300"
-                >
-                  Learn More
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                </Button>
               </CardContent>
             </Card>
           ))}

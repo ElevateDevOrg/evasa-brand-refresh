@@ -5,7 +5,7 @@
     "role": "Executive Chairman",
     "department": "Leadership",
     "bio": "Executive Chairman and Technical Lead overseeing EVASA. SANAS Nominated Representative and Technical Signatory, also driving business development. Former Group Executive at Empowerdex for Western Cape, KZN and Pretoria.",
-    "photo": "duncan-degroot.webp",
+    "photo": "duncan-degroot-standing.webp",
     "order": 1,
     "featured": true
   },
@@ -15,7 +15,7 @@
     "role": "Chief Executive Officer",
     "department": "Leadership",
     "bio": "Chief Executive Officer responsible for finance, administration and HR. Technical Signatory and active in business development.",
-    "photo": "john_degroot.webp",
+    "photo": "john-degroot-standing.webp",
     "order": 2,
     "featured": true
   },
@@ -27,7 +27,7 @@
     "bio": "Senior Verification Analyst and Technical Signatory. Manages client files and reviews and signs off files prepared by other analysts.",
     "order": 3,
     "featured": false,
-    "photo": "headshot1.webp"
+    "photo": "melanie-salochini-pillay.webp"
   },
   {
     "id": "refilwe-seretloe",
@@ -37,7 +37,7 @@
     "bio": "Verification Analyst focused on executing verification engagements and compiling defensible evidence for scoring.",
     "order": 4,
     "featured": false,
-    "photo": "headshot2.webp"
+    "photo": "refilwe-seretloe-standing.webp"
   },
   {
     "id": "kristen-kay-cloete",
@@ -47,7 +47,7 @@
     "bio": "B-BBEE Analyst liaising with consultants and clients to ensure a smooth verification. Conducts onsite verifications, validates evidence and calculates scorecards to determine BEE levels.",
     "order": 5,
     "featured": false,
-    "photo": "headshot3.webp"
+    "photo": "kristen-kay-cloete-standing.webp"
   },
   {
     "id": "sesihle-mvumbi",
@@ -57,7 +57,7 @@
     "bio": "Handles Nil scores, Joint Ventures, Ownership Certificates and Prescribed Fees, ensuring accurate records, compliance and efficient processing.",
     "order": 6,
     "featured": false,
-    "photo": "headshot4.webp"
+    "photo": "sesihle-mvumbi-standing.webp"
   },
   {
     "id": "nadia-toefy",
@@ -67,7 +67,7 @@
     "bio": "First point of contact for clients. Manages communications between EVASA, clients and staff, ensuring smooth interactions and strong stakeholder relationships.",
     "order": 7,
     "featured": false,
-    "photo": "headshot5.webp"
+    "photo": "nadia-toefy-standing.webp"
   },
   {
     "id": "cathy-de-groot",
@@ -77,8 +77,6 @@
     "bio": "Oversees administration, form development and administrative quality assurance.",
     "order": 8,
     "featured": false,
-    "photo": "headshot6.webp"
+    "photo": "cathy-degroot-standing.webp"
   }
 ]
-
-

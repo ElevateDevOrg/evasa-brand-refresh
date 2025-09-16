@@ -76,7 +76,7 @@ const About = () => {
                 <p>
                   Although EVASA prefers to focus on the verification space, we are able to provide consulting and 
                   advisory engagements as well, although these would naturally then preclude us from providing BEE 
-                  verification services to that client for a period of two years post consulting assistance.
+                  verification services to that client for a period of four years post consulting assistance.
                 </p>
               <p>
                 Our commitment is to deliver professional, accurate, and timely B-BBEE verification services 

@@ -29,7 +29,7 @@ const Contact = () => {
     {
       icon: Clock,
       title: "Business Hours",
-      details: "Mon - Fri: 8:00 - 17:00",
+      details: "Mon – Thurs: 8:00 – 17:00\nFri: 9:00 – 16:00",
       description: "We're here to help"
     }
   ];
@@ -86,7 +86,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <h4 className="text-sm font-semibold text-primary mb-0.5">{info.title}</h4>
-                        <p className="text-sm font-medium text-foreground mb-0.5">{info.details}</p>
+                        <p className="text-sm font-medium text-foreground mb-0.5 whitespace-pre-line">{info.details}</p>
                         <p className="text-xs text-foreground/70">{info.description}</p>
                       </div>
                     </div>

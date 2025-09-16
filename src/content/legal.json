@@ -1,0 +1,568 @@
+{
+  "updatedAt": "2025-09-16T10:19:57.552Z",
+  "categories": [
+    {
+      "section": "Affidavits",
+      "name": "EME Affidavits",
+      "displayName": "EME Affidavits",
+      "key": "eme-affidavits",
+      "documents": [
+        {
+          "title": "Codes of Good Practice EME Affidavit",
+          "url": "/legal/Affidavits/EME Affidavits/Affidavit-EME-Gen.pdf",
+          "ext": "pdf",
+          "bytes": 99495,
+          "mtime": "2025-09-16T09:57:28.386Z"
+        },
+        {
+          "title": "Codes of Good Practice EME Specialised Affidavit",
+          "url": "/legal/Affidavits/EME Affidavits/Affidavit-EME-Spec.pdf",
+          "ext": "pdf",
+          "bytes": 95085,
+          "mtime": "2025-09-16T09:57:28.388Z"
+        },
+        {
+          "title": "AgriBEE Sector Code EME Affidavit",
+          "url": "/legal/Affidavits/EME Affidavits/Agri-Affidavit-EME.pdf",
+          "ext": "pdf",
+          "bytes": 235976,
+          "mtime": "2025-09-16T09:57:28.390Z"
+        },
+        {
+          "title": "Construction Sector Code BEP EME Affidavit",
+          "url": "/legal/Affidavits/EME Affidavits/Construction-BEP-EME-Affidavit.pdf",
+          "ext": "pdf",
+          "bytes": 237747,
+          "mtime": "2025-09-16T09:57:28.393Z"
+        },
+        {
+          "title": "Construction Sector Code Contractor EME Affidavit",
+          "url": "/legal/Affidavits/EME Affidavits/Construction-Contractor-EME-Affidavit.pdf",
+          "ext": "pdf",
+          "bytes": 237724,
+          "mtime": "2025-09-16T09:57:28.398Z"
+        },
+        {
+          "title": "Financial Sector Code EME Affidavit",
+          "url": "/legal/Affidavits/EME Affidavits/Finance-Affidavit-EME.pdf",
+          "ext": "pdf",
+          "bytes": 237027,
+          "mtime": "2025-09-16T09:57:28.401Z"
+        },
+        {
+          "title": "ICT Sector Code EME Affidavit",
+          "url": "/legal/Affidavits/EME Affidavits/ICT-EME-Affidavit.pdf",
+          "ext": "pdf",
+          "bytes": 629384,
+          "mtime": "2025-09-16T09:57:28.405Z"
+        },
+        {
+          "title": "MAC Research Entity EME Affidavit",
+          "url": "/legal/Affidavits/EME Affidavits/MAC-Affidavit-EME.pdf",
+          "ext": "pdf",
+          "bytes": 627905,
+          "mtime": "2025-09-16T09:57:28.412Z"
+        },
+        {
+          "title": "MAC Public Relations Sector Entity EME Affidavit",
+          "url": "/legal/Affidavits/EME Affidavits/MAC-Public-Relations-Affidavit-EME.pdf",
+          "ext": "pdf",
+          "bytes": 627511,
+          "mtime": "2025-09-16T09:57:28.420Z"
+        },
+        {
+          "title": "Property Sector EME Affidavit",
+          "url": "/legal/Affidavits/EME Affidavits/Property Sector EME Affidavit.pdf",
+          "ext": "pdf",
+          "bytes": 134627,
+          "mtime": "2025-09-16T09:57:28.423Z"
+        },
+        {
+          "title": "Tourism Sector Code EME Affidavit",
+          "url": "/legal/Affidavits/EME Affidavits/Tourism-EME-Affidavit.pdf",
+          "ext": "pdf",
+          "bytes": 235827,
+          "mtime": "2025-09-16T09:57:28.426Z"
+        }
+      ]
+    },
+    {
+      "section": "Affidavits",
+      "name": "QSE Affidavits",
+      "displayName": "QSE Affidavits",
+      "key": "qse-affidavits",
+      "documents": [
+        {
+          "title": "Codes of Good Practice QSE Affidavit",
+          "url": "/legal/Affidavits/QSE Affidavits/Affidavit-QSE-Gen.pdf",
+          "ext": "pdf",
+          "bytes": 94933,
+          "mtime": "2025-09-16T09:57:28.429Z"
+        },
+        {
+          "title": "Codes of Good Practice QSE Specialised Affidavit",
+          "url": "/legal/Affidavits/QSE Affidavits/Affidavit-QSE-Spec.pdf",
+          "ext": "pdf",
+          "bytes": 95121,
+          "mtime": "2025-09-16T09:57:28.430Z"
+        },
+        {
+          "title": "AgriBEE Sector Code QSE Affidavit",
+          "url": "/legal/Affidavits/QSE Affidavits/Agri-Affidavit-QSE.pdf",
+          "ext": "pdf",
+          "bytes": 236413,
+          "mtime": "2025-09-16T09:57:28.432Z"
+        },
+        {
+          "title": "Construction Sector Code BEP QSE Affidavit",
+          "url": "/legal/Affidavits/QSE Affidavits/Construction-BEP-QSE-Affidavit.pdf",
+          "ext": "pdf",
+          "bytes": 237747,
+          "mtime": "2025-09-16T09:57:28.435Z"
+        },
+        {
+          "title": "Financial Sector Code QSE Affidavit",
+          "url": "/legal/Affidavits/QSE Affidavits/Finance-Affidavit-QSE.pdf",
+          "ext": "pdf",
+          "bytes": 237572,
+          "mtime": "2025-09-16T09:57:28.437Z"
+        },
+        {
+          "title": "ICT Sector Code QSE Affidavit",
+          "url": "/legal/Affidavits/QSE Affidavits/ICT-QSE-Affidavit.pdf",
+          "ext": "pdf",
+          "bytes": 236249,
+          "mtime": "2025-09-16T09:57:28.442Z"
+        },
+        {
+          "title": "MAC Research Entity QSE Affidavit",
+          "url": "/legal/Affidavits/QSE Affidavits/MAC-Affidavit-QSE.pdf",
+          "ext": "pdf",
+          "bytes": 236510,
+          "mtime": "2025-09-16T09:57:28.444Z"
+        },
+        {
+          "title": "MAC Public Relations Sector Entity QSE Affidavit",
+          "url": "/legal/Affidavits/QSE Affidavits/MAC-Public-Relations-Affidavit-QSE.pdf",
+          "ext": "pdf",
+          "bytes": 235912,
+          "mtime": "2025-09-16T09:57:28.448Z"
+        },
+        {
+          "title": "Property Sector QSE Affidavit",
+          "url": "/legal/Affidavits/QSE Affidavits/Property Sector QSE Affidavit.pdf",
+          "ext": "pdf",
+          "bytes": 134061,
+          "mtime": "2025-09-16T09:57:28.451Z"
+        },
+        {
+          "title": "Tourism Sector Code QSE Affidavit",
+          "url": "/legal/Affidavits/QSE Affidavits/Tourism-QSE-Affidavit.pdf",
+          "ext": "pdf",
+          "bytes": 235784,
+          "mtime": "2025-09-16T09:57:28.454Z"
+        }
+      ]
+    },
+    {
+      "section": "Affidavits",
+      "name": "Specific Affidavits",
+      "displayName": "Specific Affidavits",
+      "key": "specific-affidavits",
+      "documents": [
+        {
+          "title": "Black Designated Group Affidavit",
+          "url": "/legal/Affidavits/Specific Affidavits/Black Designated Group Affidavit.docx",
+          "ext": "docx",
+          "bytes": 34983,
+          "mtime": "2025-09-16T09:57:28.455Z"
+        },
+        {
+          "title": "Black New Entrant Affidavit",
+          "url": "/legal/Affidavits/Specific Affidavits/Black new Entrant Affidavit.docx",
+          "ext": "docx",
+          "bytes": 34362,
+          "mtime": "2025-09-16T09:57:28.456Z"
+        },
+        {
+          "title": "Socio-Economic Development Affidavit",
+          "url": "/legal/Affidavits/Specific Affidavits/SED Affidavit Template.pdf",
+          "ext": "pdf",
+          "bytes": 122744,
+          "mtime": "2025-09-16T09:57:28.458Z"
+        }
+      ]
+    },
+    {
+      "section": "Legislation",
+      "name": "Agri",
+      "displayName": "Amended AgriBEE Sector Code",
+      "key": "agri",
+      "documents": [
+        {
+          "title": "Amended AgriBEE Sector Code",
+          "url": "/legal/Legislation/Agri/Amended Agri Codes_FINAL.pdf",
+          "ext": "pdf",
+          "bytes": 1748726,
+          "mtime": "2025-09-16T09:57:28.143Z"
+        }
+      ]
+    },
+    {
+      "section": "Legislation",
+      "name": "CA",
+      "displayName": "Chartered Accountancy Sector Code",
+      "key": "ca",
+      "documents": [
+        {
+          "title": "Chartered Accountancy Sector Code - Part 1",
+          "url": "/legal/Legislation/CA/CA_Part1.pdf",
+          "ext": "pdf",
+          "bytes": 1297233,
+          "mtime": "2025-09-16T09:57:28.150Z"
+        },
+        {
+          "title": "Chartered Accountancy Sector Code - Part 2",
+          "url": "/legal/Legislation/CA/CA_Part2.pdf",
+          "ext": "pdf",
+          "bytes": 1166648,
+          "mtime": "2025-09-16T09:57:28.157Z"
+        },
+        {
+          "title": "Chartered Accountancy Sector Code - Part 3",
+          "url": "/legal/Legislation/CA/CA_Part3.pdf",
+          "ext": "pdf",
+          "bytes": 1266848,
+          "mtime": "2025-09-16T09:57:28.166Z"
+        },
+        {
+          "title": "Chartered Accountancy Sector Code - Part 4",
+          "url": "/legal/Legislation/CA/CA_Part4.pdf",
+          "ext": "pdf",
+          "bytes": 1179517,
+          "mtime": "2025-09-16T09:57:28.170Z"
+        }
+      ]
+    },
+    {
+      "section": "Legislation",
+      "name": "COGP",
+      "displayName": "Amended Codes of Good Practice",
+      "key": "cogp",
+      "documents": [
+        {
+          "title": "Amended Codes of Good Practice - General Principles",
+          "url": "/legal/Legislation/COGP/Amended 2019_GENERAL-PRINCIPLES-AND-THE-GENERIC_31052019.pdf",
+          "ext": "pdf",
+          "bytes": 197418,
+          "mtime": "2025-09-16T09:57:28.170Z"
+        },
+        {
+          "title": "Amended Codes of Good Practice - Skills",
+          "url": "/legal/Legislation/COGP/Amended Skills_MEASURING-SKILLS_31052019.pdf",
+          "ext": "pdf",
+          "bytes": 610945,
+          "mtime": "2025-09-16T09:57:28.173Z"
+        },
+        {
+          "title": "Amended Codes of Good Practice - Series 400",
+          "url": "/legal/Legislation/COGP/Amended-Code-Series-400_31052019.pdf",
+          "ext": "pdf",
+          "bytes": 347958,
+          "mtime": "2025-09-16T09:57:28.174Z"
+        },
+        {
+          "title": "Amended Codes of Good Practice - Interpretation & Definitions",
+          "url": "/legal/Legislation/COGP/Amended-Code-Series-INTERPRETATION-AND-DEFINITIONS_31052019.pdf",
+          "ext": "pdf",
+          "bytes": 182747,
+          "mtime": "2025-09-16T09:57:28.174Z"
+        },
+        {
+          "title": "Codes of Good Practice 2013",
+          "url": "/legal/Legislation/COGP/BEE COGP 2013 Codes.pdf",
+          "ext": "pdf",
+          "bytes": 1929089,
+          "mtime": "2025-09-16T09:57:28.179Z"
+        }
+      ]
+    },
+    {
+      "section": "Legislation",
+      "name": "Construction",
+      "displayName": "Amended Construction Sector Code",
+      "key": "construction",
+      "documents": [
+        {
+          "title": "Amended Construction Sector Code",
+          "url": "/legal/Legislation/Construction/Amended Construction Code_FINAL.pdf",
+          "ext": "pdf",
+          "bytes": 1232420,
+          "mtime": "2025-09-16T09:57:28.182Z"
+        }
+      ]
+    },
+    {
+      "section": "Legislation",
+      "name": "Defence",
+      "displayName": "Defence Sector Code",
+      "key": "defence",
+      "documents": [
+        {
+          "title": "Defence Sector Code",
+          "url": "/legal/Legislation/Defence/Defence-sector-code-final-document.pdf",
+          "ext": "pdf",
+          "bytes": 6817107,
+          "mtime": "2025-09-16T09:57:28.204Z"
+        }
+      ]
+    },
+    {
+      "section": "Legislation",
+      "name": "Financial Sector",
+      "displayName": "Amended Financial Services Sector Code",
+      "key": "financial-sector",
+      "documents": [
+        {
+          "title": "Amended Financial Services Sector Code",
+          "url": "/legal/Legislation/Financial Sector/Amended FSC_FINAL.pdf",
+          "ext": "pdf",
+          "bytes": 1513905,
+          "mtime": "2025-09-16T09:57:28.209Z"
+        }
+      ]
+    },
+    {
+      "section": "Legislation",
+      "name": "Forestry",
+      "displayName": "Amended Forest Sector Code",
+      "key": "forestry",
+      "documents": [
+        {
+          "title": "Amended Forest Sector Code",
+          "url": "/legal/Legislation/Forestry/Amended Forestry Codes_Final.pdf",
+          "ext": "pdf",
+          "bytes": 1405188,
+          "mtime": "2025-09-16T09:57:28.218Z"
+        }
+      ]
+    },
+    {
+      "section": "Legislation",
+      "name": "ICT",
+      "displayName": "Amended ICT Sector Code",
+      "key": "ict",
+      "documents": [
+        {
+          "title": "Amended ICT Sector Code",
+          "url": "/legal/Legislation/ICT/ICT Revised (Final).pdf",
+          "ext": "pdf",
+          "bytes": 785525,
+          "mtime": "2025-09-16T09:57:28.223Z"
+        }
+      ]
+    },
+    {
+      "section": "Legislation",
+      "name": "Legal",
+      "displayName": "Legal Sector Code",
+      "key": "legal",
+      "documents": [
+        {
+          "title": "Legal Sector Code",
+          "url": "/legal/Legislation/Legal/Gazette-51271-Legal-B-BBEE-Sector-Codes-of-Good-Practice-1-1.pdf",
+          "ext": "pdf",
+          "bytes": 1058496,
+          "mtime": "2025-09-16T09:57:28.227Z"
+        }
+      ]
+    },
+    {
+      "section": "Legislation",
+      "name": "MAC",
+      "displayName": "Marketing Advertising and Communication Sector Code",
+      "key": "mac",
+      "documents": [
+        {
+          "title": "Marketing Advertising and Communication Sector Code",
+          "url": "/legal/Legislation/MAC/MAC Sector Code_Amended.pdf",
+          "ext": "pdf",
+          "bytes": 489888,
+          "mtime": "2025-09-16T09:57:28.229Z"
+        }
+      ]
+    },
+    {
+      "section": "Legislation",
+      "name": "Property",
+      "displayName": "Amended Property Sector Code",
+      "key": "property",
+      "documents": [
+        {
+          "title": "Amended Property Sector Code",
+          "url": "/legal/Legislation/Property/Amended-Property-Sector-Codes-of-Good-Practice_1-1.pdf",
+          "ext": "pdf",
+          "bytes": 730971,
+          "mtime": "2025-09-16T09:57:28.233Z"
+        }
+      ]
+    },
+    {
+      "section": "Legislation",
+      "name": "Tourism",
+      "displayName": "Amended Tourism Sector Code",
+      "key": "tourism",
+      "documents": [
+        {
+          "title": "Amended Tourism Sector Code",
+          "url": "/legal/Legislation/Tourism/Tourism_Amended_FINAL.pdf",
+          "ext": "pdf",
+          "bytes": 946601,
+          "mtime": "2025-09-16T09:57:28.237Z"
+        }
+      ]
+    },
+    {
+      "section": "Legislation",
+      "name": "Transport",
+      "displayName": "Transport Sector Code",
+      "key": "transport",
+      "documents": [
+        {
+          "title": "Transport Sector Code - Overview",
+          "url": "/legal/Legislation/Transport/TransportPage1-12.pdf",
+          "ext": "pdf",
+          "bytes": 747105,
+          "mtime": "2025-09-16T09:57:28.244Z"
+        },
+        {
+          "title": "Transport Bus Commuter - Part 1",
+          "url": "/legal/Legislation/Transport/Transport_BusCommuterPt1.pdf",
+          "ext": "pdf",
+          "bytes": 778687,
+          "mtime": "2025-09-16T09:57:28.251Z"
+        },
+        {
+          "title": "Transport Bus Commuter - Part 2",
+          "url": "/legal/Legislation/Transport/Transport_BusCommuterPt2.pdf",
+          "ext": "pdf",
+          "bytes": 1151432,
+          "mtime": "2025-09-16T09:57:28.261Z"
+        },
+        {
+          "title": "Transport Domestic Aviation - Part 1",
+          "url": "/legal/Legislation/Transport/Transport_DomesticAviationPt1.pdf",
+          "ext": "pdf",
+          "bytes": 882514,
+          "mtime": "2025-09-16T09:57:28.268Z"
+        },
+        {
+          "title": "Transport Domestic Aviation - Part 2",
+          "url": "/legal/Legislation/Transport/Transport_DomesticAviationPt2.pdf",
+          "ext": "pdf",
+          "bytes": 777290,
+          "mtime": "2025-09-16T09:57:28.275Z"
+        },
+        {
+          "title": "Transport Forwarding & Clearing - Part 1",
+          "url": "/legal/Legislation/Transport/Transport_ForwardClearingPt1.pdf",
+          "ext": "pdf",
+          "bytes": 916101,
+          "mtime": "2025-09-16T09:57:28.283Z"
+        },
+        {
+          "title": "Transport Forwarding & Clearing - Part 2",
+          "url": "/legal/Legislation/Transport/Transport_ForwardClearingPt2.pdf",
+          "ext": "pdf",
+          "bytes": 775055,
+          "mtime": "2025-09-16T09:57:28.289Z"
+        },
+        {
+          "title": "Transport Maritime - Part 1",
+          "url": "/legal/Legislation/Transport/Transport_MaritimePt1.pdf",
+          "ext": "pdf",
+          "bytes": 989698,
+          "mtime": "2025-09-16T09:57:28.295Z"
+        },
+        {
+          "title": "Transport Maritime - Part 2",
+          "url": "/legal/Legislation/Transport/Transport_MaritimePt2.pdf",
+          "ext": "pdf",
+          "bytes": 663007,
+          "mtime": "2025-09-16T09:57:28.300Z"
+        },
+        {
+          "title": "Transport Public Sector - Part 1",
+          "url": "/legal/Legislation/Transport/Transport_PublicSectorPt1.pdf",
+          "ext": "pdf",
+          "bytes": 815766,
+          "mtime": "2025-09-16T09:57:28.305Z"
+        },
+        {
+          "title": "Transport Public Sector - Part 2",
+          "url": "/legal/Legislation/Transport/Transport_PublicSectorPt2.pdf",
+          "ext": "pdf",
+          "bytes": 2330421,
+          "mtime": "2025-09-16T09:57:28.319Z"
+        },
+        {
+          "title": "Transport Rail - Part 1",
+          "url": "/legal/Legislation/Transport/Transport_RailPt1.pdf",
+          "ext": "pdf",
+          "bytes": 670806,
+          "mtime": "2025-09-16T09:57:28.328Z"
+        },
+        {
+          "title": "Transport Rail - Part 2",
+          "url": "/legal/Legislation/Transport/Transport_RailPt2.pdf",
+          "ext": "pdf",
+          "bytes": 564634,
+          "mtime": "2025-09-16T09:57:28.337Z"
+        },
+        {
+          "title": "Transport Road Freight - Part 1",
+          "url": "/legal/Legislation/Transport/Transport_RoadFreightPt1.pdf",
+          "ext": "pdf",
+          "bytes": 714393,
+          "mtime": "2025-09-16T09:57:28.343Z"
+        },
+        {
+          "title": "Transport Road Freight - Part 2",
+          "url": "/legal/Legislation/Transport/Transport_RoadFreightPt2.pdf",
+          "ext": "pdf",
+          "bytes": 1114408,
+          "mtime": "2025-09-16T09:57:28.353Z"
+        },
+        {
+          "title": "Transport Taxi - Part 1",
+          "url": "/legal/Legislation/Transport/Transport_TaxiPt1.pdf",
+          "ext": "pdf",
+          "bytes": 793330,
+          "mtime": "2025-09-16T09:57:28.359Z"
+        },
+        {
+          "title": "Transport Taxi - Part 2",
+          "url": "/legal/Legislation/Transport/Transport_TaxiPt2.pdf",
+          "ext": "pdf",
+          "bytes": 1459983,
+          "mtime": "2025-09-16T09:57:28.370Z"
+        }
+      ]
+    },
+    {
+      "section": "Legislation",
+      "name": "YES!",
+      "displayName": "Youth Employment Scheme (YES) Gazette",
+      "key": "yes",
+      "documents": [
+        {
+          "title": "Youth Employment Scheme (YES) Gazette",
+          "url": "/legal/Legislation/YES!/YES Gazette.pdf",
+          "ext": "pdf",
+          "bytes": 294335,
+          "mtime": "2025-09-16T09:57:28.375Z"
+        }
+      ]
+    }
+  ]
+}

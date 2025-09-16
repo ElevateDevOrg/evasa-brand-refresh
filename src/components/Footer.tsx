@@ -1,11 +1,17 @@
 import { Award, Mail, Phone, MapPin } from 'lucide-react';
 
+const LEGAL_DOCUMENTS = [
+  { label: 'Appeals Process', href: '/legal/FORM-9_R2_appeals-process.pdf' },
+  { label: 'Complaints Process', href: '/legal/FORM-20_R2_complaints-process.pdf' },
+  { label: 'Impartiality Statement', href: '/legal/FORM-77_R2_impartiality-statement.pdf' },
+];
+
 const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4">
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-3 gap-12 py-16">
+        <div className="grid md:grid-cols-4 gap-12 py-16">
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
@@ -19,7 +25,7 @@ const Footer = () => {
             </div>
             <p className="text-primary-foreground/80 leading-relaxed">
               EVASA is a B-BBEE Verification agency with highly experienced principals bringing 
-              40+ years of combined expertise in verification, advisory, and auditing.
+              70+ years of combined expertise in verification, advisory, and auditing.
             </p>
             <div className="space-y-3">
               <div className="flex items-center space-x-3 text-sm">
@@ -66,24 +72,91 @@ const Footer = () => {
           <div className="space-y-6">
             <h4 className="text-xl font-playfair font-semibold">Company</h4>
             <ul className="space-y-3 text-primary-foreground/80">
-              <li className="hover:text-secondary transition-professional cursor-pointer">
-                About Us
+              <li>
+                <a
+                  href="#about"
+                  className="hover:text-secondary transition-professional"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const target = document.getElementById('about');
+                    if (target) {
+                      const headerHeight = 80;
+                      const elementPosition = target.offsetTop - headerHeight;
+                      window.scrollTo({ top: elementPosition, behavior: 'smooth' });
+                    } else {
+                      sessionStorage.setItem('scrollToSection', '#about');
+                      window.location.href = '/';
+                    }
+                  }}
+                >
+                  About Us
+                </a>
               </li>
-              <li className="hover:text-secondary transition-professional cursor-pointer">
-                Our Team
+              <li>
+                <a href="/team" className="hover:text-secondary transition-professional">
+                  Our Team
+                </a>
               </li>
-              <li className="hover:text-secondary transition-professional cursor-pointer">
-                Experience
+              <li>
+                <a
+                  href="#services"
+                  className="hover:text-secondary transition-professional"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const target = document.getElementById('services');
+                    if (target) {
+                      const headerHeight = 80;
+                      const elementPosition = target.offsetTop - headerHeight;
+                      window.scrollTo({ top: elementPosition, behavior: 'smooth' });
+                    } else {
+                      sessionStorage.setItem('scrollToSection', '#services');
+                      window.location.href = '/';
+                    }
+                  }}
+                >
+                  Experience
+                </a>
               </li>
-              <li className="hover:text-secondary transition-professional cursor-pointer">
-                Contact
+              <li>
+                <a
+                  href="#contact"
+                  className="hover:text-secondary transition-professional"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const target = document.getElementById('contact');
+                    if (target) {
+                      const headerHeight = 80;
+                      const elementPosition = target.offsetTop - headerHeight;
+                      window.scrollTo({ top: elementPosition, behavior: 'smooth' });
+                    } else {
+                      sessionStorage.setItem('scrollToSection', '#contact');
+                      window.location.href = '/';
+                    }
+                  }}
+                >
+                  Contact
+                </a>
               </li>
-              <li className="hover:text-secondary transition-professional cursor-pointer">
-                Privacy Policy
-              </li>
-              <li className="hover:text-secondary transition-professional cursor-pointer">
-                Terms of Service
-              </li>
+              
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div className="space-y-6">
+            <h4 className="text-xl font-playfair font-semibold">Legal</h4>
+            <ul className="space-y-3 text-primary-foreground/80">
+              {LEGAL_DOCUMENTS.map((doc) => (
+                <li key={doc.href}>
+                  <a
+                    href={doc.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-secondary transition-professional"
+                  >
+                    {doc.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

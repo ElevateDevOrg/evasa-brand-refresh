@@ -1,52 +1,51 @@
-import { Download, FileText, BookOpen } from 'lucide-react';
+import React from 'react';
+import { Download, FileText, BookOpen, Search, ExternalLink, XCircle } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Input } from '@/components/ui/input';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import legalManifest from '@/content/legal.json';
+import type { LegalManifest, LegalCategory } from '@/types/legal';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 
 const BEELegislation = () => {
-  const legislationCategories = [
-    {
-      title: "B-BBEE Act and Amendments",
-      description: "Core legislation and amendments to the Broad-Based Black Economic Empowerment Act",
-      documents: [
-        { name: "B-BBEE Act 53 of 2003", link: "#" },
-        { name: "B-BBEE Amendment Act 46 of 2013", link: "#" },
-        { name: "B-BBEE Amendment Act Regulations", link: "#" }
-      ]
-    },
-    {
-      title: "Sector Codes",
-      description: "Industry-specific B-BBEE codes and guidelines",
-      documents: [
-        { name: "Generic Scorecard", link: "#" },
-        { name: "Financial Services Sector Code", link: "#" },
-        { name: "ICT Sector Code", link: "#" },
-        { name: "Tourism Sector Code", link: "#" },
-        { name: "Construction Sector Code", link: "#" }
-      ]
-    },
-    {
-      title: "Verification Standards",
-      description: "Standards and requirements for B-BBEE verification",
-      documents: [
-        { name: "Verification Manual", link: "#" },
-        { name: "SANAS Requirements", link: "#" },
-        { name: "Verification Standards Framework", link: "#" }
-      ]
-    },
-    {
-      title: "Practice Notes and Guidelines",
-      description: "Official practice notes and implementation guidelines",
-      documents: [
-        { name: "Practice Note 1 of 2019", link: "#" },
-        { name: "Practice Note 2 of 2020", link: "#" },
-        { name: "DTI Implementation Guidelines", link: "#" },
-        { name: "DSBD Guidelines", link: "#" }
-      ]
+  const manifest = (legalManifest as unknown) as LegalManifest;
+  const legislationCats = manifest.categories.filter(c => c.section === 'Legislation');
+  const affidavitCats = manifest.categories.filter(c => c.section === 'Affidavits');
+
+  const [query, setQuery] = React.useState('');
+  const [activeTab, setActiveTab] = React.useState<'Legislation' | 'Affidavits'>('Legislation');
+  const [activeAffidavitTab, setActiveAffidavitTab] = React.useState(
+    affidavitCats[0]?.key ?? 'eme-affidavits'
+  );
+  const [legislationOpen, setLegislationOpen] = React.useState<string[]>([]);
+
+  function filterDocuments(category: LegalCategory) {
+    if (!query) return category.documents;
+    const q = query.toLowerCase();
+    return category.documents.filter(d => d.title.toLowerCase().includes(q));
+  }
+
+  // Compute which Legislation accordions should be open when searching
+  const legislationItems = React.useMemo(() => {
+    return legislationCats.map((category) => ({ category, docs: filterDocuments(category) }));
+  }, [legislationCats, query]);
+  React.useEffect(() => {
+    if (query) {
+      // Auto-open categories with matches while searching
+      const openKeys = legislationCats
+        .map((category) => ({ category, docs: filterDocuments(category) }))
+        .filter((x) => x.docs.length > 0)
+        .map((x) => x.category.key);
+      setLegislationOpen(openKeys);
+    } else {
+      // Return to collapsed when search clears
+      setLegislationOpen([]);
     }
-  ];
+  }, [query]);
 
   return (
     <div className="min-h-screen">
@@ -71,42 +70,164 @@ const BEELegislation = () => {
         </div>
       </section>
 
-      {/* Legislation Categories */}
+      {/* Legislation + Affidavits */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8">
-            {legislationCategories.map((category, index) => (
-              <Card key={index} className="shadow-soft hover:shadow-elegant hover:scale-105 hover:-translate-y-2 transition-all duration-500 group">
-                <CardHeader>
-                  <CardTitle className="text-xl font-inter text-foreground flex items-center">
-                    <FileText className="h-6 w-6 text-accent mr-3 group-hover:text-primary transition-colors duration-300" />
-                    {category.title}
-                  </CardTitle>
-                  <CardDescription className="text-muted-foreground">
-                    {category.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    {category.documents.map((doc, docIndex) => (
-                      <div key={docIndex} className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
-                        <span className="text-sm font-medium text-foreground">{doc.name}</span>
-                        <Button 
-                          variant="outline" 
-                          size="sm"
-                          className="text-accent border-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300 group/btn"
-                          onClick={() => window.open(doc.link, '_blank')}
-                        >
-                          <Download className="h-4 w-4 mr-2 group-hover/btn:translate-y-0.5 transition-transform duration-300" />
-                          Download
-                        </Button>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+        <div className="container mx-auto px-4 space-y-6">
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as 'Legislation' | 'Affidavits')}>
+              <TabsList>
+                <TabsTrigger value="Legislation">Legislation</TabsTrigger>
+                <TabsTrigger value="Affidavits">Affidavits</TabsTrigger>
+              </TabsList>
+            </Tabs>
+            <div className="relative w-full md:w-96">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                placeholder="Search documents..."
+                className="pl-9"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+              />
+              {query && (
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  className="absolute right-1.5 top-1/2 -translate-y-1/2 h-7 w-7 text-muted-foreground hover:text-foreground"
+                  onClick={() => setQuery('')}
+                  aria-label="Clear search"
+                  title="Clear search"
+                >
+                  <XCircle className="h-4 w-4" />
+                </Button>
+              )}
+            </div>
           </div>
+
+          <div className="text-xs text-muted-foreground">Updated {new Date(manifest.updatedAt).toLocaleDateString()}</div>
+
+          <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as 'Legislation' | 'Affidavits')} className="w-full">
+            <TabsContent value="Legislation">
+              <Accordion
+                type="multiple"
+                value={legislationOpen}
+                onValueChange={(val) => setLegislationOpen(Array.isArray(val) ? val : [val])}
+                className="w-full divide-y rounded-md border bg-background"
+              >
+                {legislationItems
+                  .filter((x) => x.docs.length > 0)
+                  .map(({ category, docs }) => (
+                    <AccordionItem key={category.key} value={category.key}>
+                      <AccordionTrigger className="px-4">
+                        <div className="flex items-center gap-3 text-left">
+                          <FileText className="h-4 w-4 text-accent" />
+                          <span className="font-medium">{category.displayName || category.name}</span>
+                          <span className="text-xs text-muted-foreground">({docs.length})</span>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <div className="px-2">
+                          <div className="divide-y rounded-md border">
+                            {docs.map((doc) => (
+                              <div key={doc.url} className="flex items-center justify-between gap-3 px-3 py-2 text-sm">
+                                <span className="truncate pr-2">{doc.title}</span>
+                                <div className="flex items-center gap-2 shrink-0">
+                                  <Button
+                                    variant="outline"
+                                    size="sm"
+                                    className="h-8 px-2 text-xs"
+                                    onClick={() => window.open(doc.url, '_blank')}
+                                  >
+                                    <Download className="h-3.5 w-3.5 mr-1" />
+                                    Download
+                                  </Button>
+                                  {['doc', 'docx', 'xls', 'xlsx'].includes(doc.ext) && (
+                                    <Button
+                                      variant="ghost"
+                                      size="icon"
+                                      className="h-8 w-8"
+                                      onClick={() => window.open(`https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(window.location.origin + doc.url)}`, '_blank')}
+                                      title="Open in Office Online"
+                                    >
+                                      <ExternalLink className="h-4 w-4" />
+                                    </Button>
+                                  )}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+              </Accordion>
+            </TabsContent>
+
+            <TabsContent value="Affidavits">
+              <Tabs value={activeAffidavitTab} onValueChange={setActiveAffidavitTab}>
+                <TabsList className="mb-4">
+                  {affidavitCats.map((cat) => (
+                    <TabsTrigger key={cat.key} value={cat.key}>{cat.name}</TabsTrigger>
+                  ))}
+                </TabsList>
+
+                {affidavitCats.map((category) => {
+                  const docs = filterDocuments(category);
+                  return (
+                    <TabsContent key={category.key} value={category.key}>
+                      <Accordion type="multiple" defaultValue={[`${category.key}-docs`]} className="w-full rounded-md border bg-background">
+                        <AccordionItem value={`${category.key}-docs`}>
+                          <AccordionTrigger className="px-4">
+                            <div className="flex items-center gap-3 text-left">
+                              <FileText className="h-4 w-4 text-accent" />
+                              <span className="font-medium">{category.displayName || category.name}</span>
+                              <span className="text-xs text-muted-foreground">({docs.length})</span>
+                            </div>
+                          </AccordionTrigger>
+                          <AccordionContent>
+                            <div className="px-2">
+                              <div className="divide-y rounded-md border">
+                                {docs.map((doc) => (
+                                  <div key={doc.url} className="flex items-center justify-between gap-3 px-3 py-2 text-sm">
+                                    <span className="truncate pr-2">{doc.title}</span>
+                                    <div className="flex items-center gap-2 shrink-0">
+                                      <Button
+                                        variant="outline"
+                                        size="sm"
+                                        className="h-8 px-2 text-xs"
+                                        onClick={() => window.open(doc.url, '_blank')}
+                                      >
+                                        <Download className="h-3.5 w-3.5 mr-1" />
+                                        Download
+                                      </Button>
+                                      {['doc', 'docx', 'xls', 'xlsx'].includes(doc.ext) && (
+                                        <Button
+                                          variant="ghost"
+                                          size="icon"
+                                          className="h-8 w-8"
+                                          onClick={() => window.open(`https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(window.location.origin + doc.url)}`, '_blank')}
+                                          title="Open in Office Online"
+                                        >
+                                          <ExternalLink className="h-4 w-4" />
+                                        </Button>
+                                      )}
+                                    </div>
+                                  </div>
+                                ))}
+                                {docs.length === 0 && (
+                                  <div className="px-3 py-2 text-sm text-muted-foreground">No results match your search.</div>
+                                )}
+                              </div>
+                            </div>
+                          </AccordionContent>
+                        </AccordionItem>
+                      </Accordion>
+                    </TabsContent>
+                  );
+                })}
+              </Tabs>
+            </TabsContent>
+          </Tabs>
         </div>
       </section>
 

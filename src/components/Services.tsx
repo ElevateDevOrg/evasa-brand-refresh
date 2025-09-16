@@ -13,7 +13,7 @@ const Services = () => {
     {
       icon: FileCheck,
       title: "BEE Verification",
-      description: "Comprehensive B-BBEE verification services with 40+ years of combined experience in the verification space",
+      description: "Comprehensive B-BBEE verification services with 70+ years of combined experience in the verification space",
       features: ["Complete B-BBEE scorecards", "Private equity structures", "Joint venture assessments", "Annual compliance"]
     },
     {
@@ -51,7 +51,7 @@ const Services = () => {
             Our <span className="text-gradient-red">Services</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            EVASA is a Broad-Based Black Economic Empowerment ("B-BBEE") Verification agency. Our principals are highly experienced BEE and auditing practitioners, with a cumulative 40 years in the B-BBEE verification, B-BBEE advisory and auditing space. We provide a full-service offering in the verification process, assisting clients from initial engagement, through the verification process itself, to final B-BBEE certification.
+            EVASA is a Broad-Based Black Economic Empowerment ("B-BBEE") Verification agency. Our team is highly experienced BEE and auditing practitioners, with cumulative experience in the B-BBEE verification, B-BBEE advisory and auditing space exceeding 70 years. We provide a full-service offering in the verification process, assisting clients from initial engagement, through the verification process itself, to final B-BBEE certification.
           </p>
         </div>
 

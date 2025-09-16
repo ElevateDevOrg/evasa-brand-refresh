@@ -47,7 +47,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 leading-relaxed">
-              Full service offering with 40+ years of combined experience in B-BBEE verification, advisory, and auditing excellence.
+              Full service offering with 70+ years of combined experience in B-BBEE verification, advisory, and auditing excellence.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -94,16 +94,9 @@ const Hero = () => {
               <div className="text-center group hover:-translate-y-1 transition-all duration-300">
                 <div className="flex items-center justify-center mb-2">
                   <Shield className="h-6 w-6 text-secondary mr-2 group-hover:text-accent transition-colors duration-300" />
-                  <span className="text-2xl font-bold text-primary-foreground group-hover:text-accent transition-colors duration-300">40+</span>
+                  <span className="text-2xl font-bold text-primary-foreground group-hover:text-accent transition-colors duration-300">70+</span>
                 </div>
                 <p className="text-primary-foreground/80 text-sm group-hover:text-primary-foreground transition-colors duration-300">Years Experience</p>
-              </div>
-              <div className="text-center group hover:-translate-y-1 transition-all duration-300">
-                <div className="flex items-center justify-center mb-2">
-                  <TrendingUp className="h-6 w-6 text-secondary mr-2 group-hover:text-accent transition-colors duration-300" />
-                  <span className="text-2xl font-bold text-primary-foreground group-hover:text-accent transition-colors duration-300">100%</span>
-                </div>
-                <p className="text-primary-foreground/80 text-sm group-hover:text-primary-foreground transition-colors duration-300">Success Rate</p>
               </div>
               <div className="text-center group hover:-translate-y-1 transition-all duration-300">
                 <div className="flex items-center justify-center mb-2">

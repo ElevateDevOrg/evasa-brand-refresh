@@ -60,6 +60,51 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## Legal (BEE Legislation & Affidavits)
+
+This page is manifest-driven to make adding/removing documents easy and safe.
+
+### Folder layout under `public/legal`
+
+```
+public/legal/
+  Legislation/
+    <Sector Name>/
+      <Document>.pdf
+  Affidavits/
+    EME Affidavits/
+      <Document>.pdf
+    QSE Affidavits/
+      <Document>.pdf
+    Specific Affidavits/
+      <Document>.(pdf|doc|docx|xls|xlsx)
+```
+
+### Generate manifest
+
+Run this whenever files change in `public/legal`:
+
+```bash
+npm run build:legal
+```
+
+This creates/updates `src/content/legal.json` consumed by `src/pages/BEELegislation.tsx`.
+
+### File types
+
+- PDFs open/download directly.
+- Word/Excel (`.doc/.docx/.xls/.xlsx`) include an “Open in Office Online” option via Microsoft Office viewer.
+
+### Add/remove documents
+
+- Drop files into the correct folder above.
+- Run `npm run build:legal`.
+- Commit both file changes and `src/content/legal.json`.
+
+Notes:
+- Keep folder names exactly as shown for affidavits: `EME Affidavits`, `QSE Affidavits`, `Specific Affidavits`.
+- Sector names under `Legislation/` become category headings.
+
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/b4ae33a1-2b62-4f51-a31b-02048bfe11c1) and click on Share -> Publish.

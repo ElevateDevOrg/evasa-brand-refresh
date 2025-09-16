@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "validate:team": "node scripts/validate-team.mjs",
-    "build": "npm run validate:team && vite build",
+    "build:legal": "node scripts/generate-legal-manifest.mjs",
+    "build": "npm run validate:team && npm run build:legal && vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview"

@@ -6,6 +6,8 @@ export type TeamMember = {
   id: string;
   name: string;
   role: string;
+  qualifications?: string;
+  involvedSince?: string | number;
   department?: string;
   bio: string;
   photo?: string; // filename only, optional; fallback to placeholder when missing
@@ -59,10 +61,29 @@ const TeamCard = ({ member, variant = 'default', className, showBioInCompact = f
           </AspectRatio>
         </div>
         <CardContent className={cn(variant === 'compact' ? 'pt-3' : 'pt-4')}>
-          <h4 className={cn('font-semibold tracking-tight', variant === 'compact' ? 'text-base' : 'text-lg')}>{member.name}</h4>
+          <h4 className={cn('font-semibold tracking-tight', variant === 'compact' ? 'text-base' : 'text-lg')}>
+            {member.name}
+          </h4>
           <p className={cn('text-muted-foreground', variant === 'compact' ? 'text-xs' : 'text-sm')}>{member.role}</p>
+          {member.qualifications ? (
+            <p className={cn('text-muted-foreground', variant === 'compact' ? 'text-[10px]' : 'text-xs')}>
+              {member.qualifications}
+            </p>
+          ) : null}
+          {member.involvedSince ? (
+            <p className={cn('text-muted-foreground', variant === 'compact' ? 'text-[10px]' : 'text-xs')}>
+              {`Involved in BEE since ${member.involvedSince}`}
+            </p>
+          ) : null}
           {(variant !== 'compact' || showBioInCompact) && (
-            <p className={cn('mt-2 leading-relaxed', variant === 'compact' ? 'text-xs' : 'text-sm')}>{member.bio}</p>
+            <p
+              className={cn(
+                'mt-3 pt-3 border-t border-border leading-relaxed whitespace-pre-line max-w-[60ch]',
+                variant === 'compact' ? 'text-xs' : 'text-sm'
+              )}
+            >
+              {member.bio}
+            </p>
           )}
         </CardContent>
       </Card>

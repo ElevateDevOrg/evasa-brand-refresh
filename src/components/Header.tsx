@@ -91,6 +91,10 @@ const Header = () => {
                     top: elementPosition,
                     behavior: 'smooth'
                   });
+                } else {
+                  // Navigate to home and scroll after load
+                  sessionStorage.setItem('scrollToSection', '#contact');
+                  window.location.href = '/';
                 }
               }}
             >
@@ -154,6 +158,10 @@ const Header = () => {
                       top: elementPosition,
                       behavior: 'smooth'
                     });
+                  } else {
+                    // Navigate to home and scroll after load
+                    sessionStorage.setItem('scrollToSection', '#contact');
+                    window.location.href = '/';
                   }
                   setIsMenuOpen(false); // Close mobile menu after clicking
                 }}

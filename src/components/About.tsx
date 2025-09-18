@@ -51,7 +51,7 @@ const About = () => {
           </h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             EVASA is a Broad-Based Black Economic Empowerment verification agency with highly experienced 
-            principals who bring a cumulative 40 years of expertise in B-BBEE verification, advisory, and auditing.
+            principals who bring a cumulative 70 years of expertise in B-BBEE verification, advisory, and auditing.
           </p>
         </div>
 

@@ -14,6 +14,8 @@ type LogoMarqueeProps = {
   speedSec?: number;
   pauseOnHover?: boolean;
   forceMotion?: boolean;
+  className?: string;
+  style?: React.CSSProperties;
 };
 
 export default function LogoMarquee({
@@ -21,6 +23,8 @@ export default function LogoMarquee({
   speedSec = 30,
   pauseOnHover = true,
   forceMotion = false,
+  className,
+  style,
 }: LogoMarqueeProps) {
   const loop: Client[] = [...(clients as Client[]), ...(clients as Client[])];
 
@@ -37,13 +41,14 @@ export default function LogoMarquee({
 
   return (
     <section
-      className={`${styles.wrapper} ${forceMotion ? styles.force : ''}`}
+      className={`${styles.wrapper} ${forceMotion ? styles.force : ''} ${className ?? ''}`}
       aria-label="Selected clients we have worked with"
       style={
         {
           ["--logo-h" as any]: `${height}px`,
           ["--speed" as any]: `${speedSec}s`,
           ["--pause-on-hover" as any]: pauseOnHover ? "paused" : "running",
+          ...style,
         } as React.CSSProperties
       }
     >

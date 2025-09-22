@@ -1,6 +1,7 @@
 import { ArrowRight, Shield, TrendingUp, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState, useEffect } from 'react';
+import LogoMarquee from '@/components/LogoMarquee';
 import heroImage from '@/assets/hero-handshake.webp';
 
 const Hero = () => {
@@ -28,6 +29,8 @@ const Hero = () => {
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent"></div>
+        {/* Lightening gradient at bottom to improve logo contrast */}
+        <div className="absolute inset-x-0 bottom-0 h-80 md:h-96 bg-gradient-to-t from-white/55 via-white/30 to-transparent"></div>
       </div>
 
       {/* Content */}
@@ -110,12 +113,24 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-subtle">
-        <div className="w-6 h-10 border-2 border-primary-foreground/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-secondary rounded-full mt-2 animate-pulse"></div>
+      {/* Logo Marquee pinned to bottom of hero */}
+      <div className="absolute left-0 right-0 z-10 bottom-4 md:bottom-6">
+        <div>
+          <LogoMarquee
+            height={56}
+            speedSec={40}
+            forceMotion
+            className="!rounded-none"
+            style={{
+              ["--mask-width" as any]: "0px",
+              ["--mask-display" as any]: "none",
+              ["--mask-fade" as any]: "160px",
+            }}
+          />
         </div>
       </div>
+
+      {/* Scroll Indicator removed as requested */}
     </section>
   );
 };

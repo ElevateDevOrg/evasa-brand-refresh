@@ -2,17 +2,27 @@
   --logo-h: 48px;
   --gap: 2.5rem;
   --speed: 30s;
+  --mask-fade: 96px;
   position: relative;
   overflow: hidden;
   padding-block: 12px;
-  border-radius: 12px;
+  /* Edge fade using CSS masks so background shows through naturally */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 var(--mask-fade), #000 calc(100% - var(--mask-fade)), transparent);
+  mask-image: linear-gradient(to right, transparent, #000 var(--mask-fade), #000 calc(100% - var(--mask-fade)), transparent);
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
 }
 
 .maskLeft, .maskRight {
   position: absolute;
-  top: 0; bottom: 0; width: 48px; pointer-events: none;
+  top: 0; bottom: 0; width: var(--mask-width, 60px); pointer-events: none;
+  /* gradient color is customizable via --wrap-bg */
   background: linear-gradient(to right, var(--wrap-bg, #fff), transparent);
   z-index: 2;
+  /* Disabled by default in favor of CSS masks */
+  display: var(--mask-display, none);
 }
 .maskLeft { left: 0; }
 .maskRight {
@@ -45,6 +55,7 @@
   height: var(--logo-h);
   width: auto;
   object-fit: contain;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3));
 }
 
 @keyframes scroll {

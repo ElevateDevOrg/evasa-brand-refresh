@@ -47,23 +47,85 @@ const Footer = () => {
           <div className="space-y-6">
             <h4 className="text-xl font-playfair font-semibold">Our Services</h4>
             <ul className="space-y-3 text-primary-foreground/80">
-              <li className="hover:text-secondary transition-professional cursor-pointer">
-                B-BBEE Verification
+              <li>
+                <a
+                  href="#services"
+                  className="hover:text-secondary transition-professional cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const target = document.getElementById('services');
+                    if (target) {
+                      const headerHeight = 80;
+                      const elementPosition = target.offsetTop - headerHeight;
+                      window.scrollTo({ top: elementPosition, behavior: 'smooth' });
+                    } else {
+                      sessionStorage.setItem('scrollToSection', '#services');
+                      window.location.href = '/';
+                    }
+                  }}
+                >
+                  B-BBEE Verification
+                </a>
               </li>
-              <li className="hover:text-secondary transition-professional cursor-pointer">
-                B-BBEE Consulting
+              <li>
+                <a
+                  href="#services"
+                  className="hover:text-secondary transition-professional cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const target = document.getElementById('services');
+                    if (target) {
+                      const headerHeight = 80;
+                      const elementPosition = target.offsetTop - headerHeight;
+                      window.scrollTo({ top: elementPosition, behavior: 'smooth' });
+                    } else {
+                      sessionStorage.setItem('scrollToSection', '#services');
+                      window.location.href = '/';
+                    }
+                  }}
+                >
+                  B-BBEE Consulting
+                </a>
               </li>
-              <li className="hover:text-secondary transition-professional cursor-pointer">
-                Rating & Analysis
+              <li>
+                <a
+                  href="#services"
+                  className="hover:text-secondary transition-professional cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const target = document.getElementById('services');
+                    if (target) {
+                      const headerHeight = 80;
+                      const elementPosition = target.offsetTop - headerHeight;
+                      window.scrollTo({ top: elementPosition, behavior: 'smooth' });
+                    } else {
+                      sessionStorage.setItem('scrollToSection', '#services');
+                      window.location.href = '/';
+                    }
+                  }}
+                >
+                  Rating & Analysis
+                </a>
               </li>
-              <li className="hover:text-secondary transition-professional cursor-pointer">
-                Ownership Assessment
-              </li>
-              <li className="hover:text-secondary transition-professional cursor-pointer">
-                Gap Analysis
-              </li>
-              <li className="hover:text-secondary transition-professional cursor-pointer">
-                Compliance Services
+              <li>
+                <a
+                  href="#services"
+                  className="hover:text-secondary transition-professional cursor-pointer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const target = document.getElementById('services');
+                    if (target) {
+                      const headerHeight = 80;
+                      const elementPosition = target.offsetTop - headerHeight;
+                      window.scrollTo({ top: elementPosition, behavior: 'smooth' });
+                    } else {
+                      sessionStorage.setItem('scrollToSection', '#services');
+                      window.location.href = '/';
+                    }
+                  }}
+                >
+                  Ownership Assessment
+                </a>
               </li>
             </ul>
           </div>

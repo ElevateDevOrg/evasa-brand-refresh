@@ -64,7 +64,8 @@ export default function LogoMarquee({
               alt=""
               aria-hidden="true"
               height={height}
-              loading="lazy"
+              loading="eager"
+              decoding="async"
             />
           </li>
         ))}
